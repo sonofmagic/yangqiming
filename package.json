@@ -1,9 +1,8 @@
 {
-  "name": "npm-lib-template",
+  "name": "yangqiming",
   "version": "1.0.0",
-  "description": "npm-lib-template",
+  "description": "yangqiming",
   "main": "dist/index.js",
-  "module": "dist/index.es.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "yarn dts && cross-env NODE_ENV=development rollup -cw",
@@ -13,14 +12,18 @@
     "test": "jest",
     "init:rename": "node scripts/init/rename.js",
     "init:bin": "node scripts/init/bin.js",
-    "clean": "node scripts/clean.js"
+    "clean": "node scripts/clean.js",
+    "raw": "cross-env TRACE=0 node bin/yangqiming.js",
+    "raw2": "cross-env GITHUB_CI=1 TRACE=0 node ./bin/yangqiming.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sonofmagic/npm-lib-template.git"
+    "url": "git+https://github.com/sonofmagic/yangqiming.git"
   },
   "files": [
-    "dist"
+    "dist",
+    "bin",
+    "assets"
   ],
   "publishConfig": {
     "access": "public",
@@ -30,9 +33,9 @@
   "author": "SonOfMagic <qq1324318532@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sonofmagic/npm-lib-template/issues"
+    "url": "https://github.com/sonofmagic/yangqiming/issues"
   },
-  "homepage": "https://github.com/sonofmagic/npm-lib-template#readme",
+  "homepage": "https://github.com/sonofmagic/yangqiming#readme",
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.9",
     "@rollup/plugin-commonjs": "^21.0.2",
@@ -43,9 +46,17 @@
     "@tsconfig/recommended": "^1.0.1",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.21",
+    "@types/node-emoji": "^1.8.1",
+    "@types/prompts": "^2.0.14",
+    "@types/qrcode": "^1.4.2",
+    "@types/sound-play": "^1.1.0",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
+    "axios": "^0.26.1",
+    "boxen": "^6.2.1",
+    "chalk": "^4.1.2",
     "cross-env": "^7.0.3",
+    "dayjs": "^1.11.1",
     "defu": "^5.0.1",
     "del": "^6.0.0",
     "eslint": "8.10.0",
@@ -54,13 +65,22 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.0.0",
     "jest": "^27.5.1",
+    "node-emoji": "^1.11.0",
+    "oo-ascii-tree": "^1.56.0",
+    "open": "^8.4.0",
+    "prompts": "^2.4.2",
+    "qrcode": "^1.5.0",
     "rollup": "^2.70.0",
     "rollup-plugin-terser": "^7.0.2",
+    "sound-play": "^1.1.0",
     "ts-jest": "^27.1.3",
     "ts-node": "^10.7.0",
     "tslib": "^2.3.1",
     "ttypescript": "^1.5.13",
     "typescript": "^4.6.2",
     "typescript-transform-paths": "^3.3.1"
+  },
+  "bin": {
+    "yangqiming": "bin/yangqiming.js"
   }
 }

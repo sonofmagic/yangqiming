@@ -1,11 +1,6 @@
-export const foo = 'bar'
-
-export const wait = (timeout?: number) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(true)
-    }, timeout)
-  })
-}
-
-export * from '@/util'
+import profile from './constants'
+export { profile }
+export * from './util'
+export * from './play'
+export * from './post-clue'
+export * from './support'
