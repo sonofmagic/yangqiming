@@ -4,7 +4,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import pkg from './package.json'
 import json from '@rollup/plugin-json'
 // import replace from '@rollup/plugin-replace'
-// import { terser } from 'rollup-plugin-terser'
+import { terser } from 'rollup-plugin-terser'
 // const isProd = process.env.NODE_ENV === 'production'
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -34,6 +34,7 @@ const config = {
       preferBuiltins: true
     }),
     commonjs(),
+    terser(),
     typescript({ tsconfig: './tsconfig.build.json', sourceMap: isDev })
   ],
   external: [...(pkg.dependencies ? Object.keys(pkg.dependencies) : [])]
