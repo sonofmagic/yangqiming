@@ -1,6 +1,6 @@
 {
   "name": "yangqiming",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "yangqiming",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -29,7 +29,13 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "keywords": [],
+  "keywords": [
+    "icebreaker",
+    "yangqiming",
+    "profile",
+    "profile-icebreaker",
+    "resume"
+  ],
   "author": "SonOfMagic <qq1324318532@gmail.com>",
   "license": "MIT",
   "bugs": {
