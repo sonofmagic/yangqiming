@@ -28,14 +28,14 @@ const icebreaker = chalk.greenBright(nickname)
 // https://stackoverflow.com/questions/23548946/how-can-i-check-if-a-users-computer-supports-emoji
 ;(async () => {
   try {
-    try {
-      if (process.env.TRACE !== '0') {
-        const { postClue } = await import('./post-clue')
-        postClue().catch((err) => err)
-      }
-    } catch (error) {
-      isGithubCi && console.error(error)
-    }
+    // try {
+    //   if (process.env.TRACE !== '0') {
+    //     const { postClue } = await import('./post-clue')
+    //     postClue().catch((err) => err)
+    //   }
+    // } catch (error) {
+    //   isGithubCi && console.error(error)
+    // }
 
     log(`欢迎来到 ${icebreaker} 信息管理系统`)
     while (true) {
