@@ -12,7 +12,7 @@ import {
 } from './util'
 import { playMusicByUrl } from './play'
 import profileData from './constants'
-const isGithubCi = Boolean(process.env.GITHUB_CI)
+// const isGithubCi = Boolean(process.env.GITHUB_CI)
 
 const log = console.log
 
