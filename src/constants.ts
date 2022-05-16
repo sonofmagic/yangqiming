@@ -3,7 +3,14 @@ export default {
   nickname: 'ice breaker',
   gender: '男',
   startWorkDay: '2016-07-01',
-  magicWaltz: 'https://static.icebreaker.top/audio/MagicWaltz.m4a',
+  songs: [
+    {
+      title: 'MagicWaltz',
+      description: 'The Legend of 1900',
+      value: 'MagicWaltz',
+      url: 'https://static.icebreaker.top/audio/MagicWaltz.m4a'
+    }
+  ],
   options: {
     profile: 'profile',
     contact: 'contact',

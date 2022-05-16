@@ -6,7 +6,7 @@ import chalk from 'chalk'
 import dayjs from 'dayjs'
 import prompts from 'prompts'
 import boxen from 'boxen'
-import sound from 'sound-play'
+
 import axios from 'axios'
 import { isUnicodeSupported } from './support'
 
@@ -63,6 +63,5 @@ export {
   dayjs,
   prompts,
   boxen,
-  axios,
-  sound
+  axios
 }

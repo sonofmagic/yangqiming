@@ -16,8 +16,7 @@ import profileData from './constants'
 
 const log = console.log
 
-const { gender, name, nickname, magicWaltz, startWorkDay, options } =
-  profileData
+const { gender, name, nickname, songs, startWorkDay, options } = profileData
 
 const whenToStartWork = dayjs(startWorkDay)
 
@@ -73,7 +72,7 @@ const icebreaker = chalk.greenBright(nickname)
             {
               title: '音乐',
               value: options.music,
-              description: `不支持 ${chalk.bold.greenBright('Linux')} 系统哟`
+              description: `调用 ${chalk.bold.greenBright('默认')} 系统播放器`
             },
             { title: '退出', value: options.quit, description: '退出系统' }
           ],
@@ -244,17 +243,12 @@ const icebreaker = chalk.greenBright(nickname)
           type: 'select',
           name: 'play',
           message: '选择曲目',
-          choices: [
-            {
-              title: 'MagicWaltz',
-              description: 'The Legend of 1900',
-              value: 'MagicWaltz'
-            }
-          ],
+          choices: songs,
           initial: 0
         })
-        if (response.play === 'MagicWaltz') {
-          await playMusicByUrl(magicWaltz)
+        const song = songs.find((x) => x.value === response.play)
+        if (song) {
+          await playMusicByUrl(song.url)
         }
       } else if (value === options.quit) {
         log(successExitString)

@@ -1,7 +1,8 @@
 import path from 'path'
 import fs from 'fs'
-import { chalk, sound, axios } from './util'
-
+import { chalk, axios } from './util'
+import createPlayer from 'play-sound'
+const player = createPlayer()
 async function playMusicByUrl (url: string, name?: string) {
   try {
     const basename = path.basename(url)
@@ -20,7 +21,8 @@ async function playMusicByUrl (url: string, name?: string) {
       console.log(
         `${chalk.green('√')} ${chalk.bold(`${name || '音乐'}加载完成`)}`
       )
-      sound.play(targetPath)
+      player.play(targetPath)
+      // sound.play(targetPath)
     })
   } catch (error) {
     console.log('出错啦，没有获取到音乐资源。')
