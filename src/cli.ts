@@ -105,9 +105,9 @@ const icebreaker = chalk.greenBright(nickname)
             dayjs().year() - whenToStartWork.year()
           )} 年经验 | ${emoji.get('mortar_board')} 扬州大学-软件工程-本科`,
           `\n\n${chalk.bold.greenBright('|')} 个人优势`,
-          '\n靠谱，对技术比较热爱',
+          '\n总是很靠谱，对技术还算热爱',
           `\n\n${chalk.bold.greenBright('|')} 个人技能`,
-          '\n 前端：Vue React uniapp , 后端 Nodejs Serverless',
+          '\n基本功好都能写',
           `\n\n${chalk.bold.greenBright('|')} 期望职位`,
           `\n${emoji.get('art')} 钱多 | ${emoji.get(
             'moneybag'
@@ -115,9 +115,9 @@ const icebreaker = chalk.greenBright(nickname)
             'laughing'
           )}${emoji.get('joy')}`,
           `\n\n${chalk.bold.greenBright('|')} 工作经历`,
-          '\n> 往事不堪回首月明中 \n 经历过打工人被压榨,996,看不到希望 \n 也经历过作为合伙人,为了一张空头支票而奋不顾身', // ,最终被踢出局
+          '\n经历过作为打工人,被压榨到看不到希望 \n也经历过作为合伙人,为了一张空头支票而奋不顾身', // ,最终被踢出局
           `\n\n${chalk.bold.greenBright('|')} 项目经历`,
-          `\n> 雕栏玉砌应犹在，只是朱颜改。\n\n${createProjectsTree().toString()}`,
+          `\n${createProjectsTree().toString()}`,
           '\n> 人生代代无穷已，江月年年只相似',
           '\n 欢迎对技术感兴趣的小伙伴一起交流！'
         ]

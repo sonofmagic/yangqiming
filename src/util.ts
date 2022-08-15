@@ -25,17 +25,23 @@ async function generateQrcode (input: string) {
 }
 
 function createProjectsTree () {
-  const tree = new AsciiTree('主程主架构')
-
-  tree.add(new AsciiTree('官网', new AsciiTree('SSR'), new AsciiTree('Nuxt')))
+  const tree = new AsciiTree('创业者/核心开发')
 
   tree.add(
     new AsciiTree(
-      '产品端',
-      new AsciiTree('SPA'),
+      '官网前后端',
+      new AsciiTree('Nuxtjs'),
+      new AsciiTree('Nestjs')
+    )
+  )
+
+  tree.add(
+    new AsciiTree(
+      '产品前后端',
       new AsciiTree('Vue'),
       new AsciiTree('React'),
-      new AsciiTree('Umi')
+      new AsciiTree('Umi'),
+      new AsciiTree('Nodejs')
     )
   )
 
@@ -45,7 +51,7 @@ function createProjectsTree () {
 
   tree.add(
     new AsciiTree(
-      '实时通讯',
+      '实时通讯IM',
       new AsciiTree('websocket'),
       new AsciiTree('socket.io'),
       new AsciiTree('nodejs')
