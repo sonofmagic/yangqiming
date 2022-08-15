@@ -46,17 +46,17 @@ function createProjectsTree () {
   )
 
   tree.add(
-    new AsciiTree('诸多小程序', new AsciiTree('wepy'), new AsciiTree('uniapp'))
+    new AsciiTree('小程序', new AsciiTree('wepy'), new AsciiTree('uniapp'))
   )
 
-  tree.add(
-    new AsciiTree(
-      '实时通讯IM',
-      new AsciiTree('websocket'),
-      new AsciiTree('socket.io'),
-      new AsciiTree('nodejs')
-    )
-  )
+  // tree.add(
+  //   new AsciiTree(
+  //     '实时通讯IM',
+  //     new AsciiTree('websocket'),
+  //     new AsciiTree('socket.io'),
+  //     new AsciiTree('nodejs')
+  //   )
+  // )
 
   return tree
 }
