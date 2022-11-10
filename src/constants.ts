@@ -19,6 +19,7 @@ export default {
     blogMp: 'blogMp',
     music: 'music',
     quit: 'quit',
-    photo: 'photo'
+    photo: 'photo',
+    changeLanguage: 'changeLanguage'
   }
 }

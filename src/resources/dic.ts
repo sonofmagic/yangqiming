@@ -25,5 +25,9 @@ export default {
   quitdescription: 'quitdescription',
 
   quitprompt: 'quitprompt',
-  quitsuccessExitString: 'quitsuccessExitString'
+  quitsuccessExitString: 'quitsuccessExitString',
+
+  changeLanguage: 'changeLanguage',
+  changeLanguagedescription: 'changeLanguagedescription',
+  changeLanguageselect: 'changeLanguageselect'
 } as const

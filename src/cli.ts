@@ -64,6 +64,11 @@ async function main() {
               value: options.blogMp,
               description: t(Dic.blogMpdescription)
             },
+            {
+              title: t(Dic.changeLanguage),
+              value: options.changeLanguage,
+              description: t(Dic.changeLanguagedescription)
+            },
             // {
             //   title: t(Dic.music),
             //   value: options.music,
@@ -229,6 +234,29 @@ async function main() {
         if (song) {
           await playMusicByUrl(song.url)
         }
+      } else if (value === options.changeLanguage) {
+        const response = await prompts({
+          type: 'select',
+          name: 'lang',
+          message: t(Dic.changeLanguageselect) as string,
+          choices: [
+            {
+              title: 'English',
+              value: 'en'
+            },
+            {
+              title: '中文',
+              value: 'zh'
+            }
+          ].map((x) => {
+            return {
+              ...x,
+              selected: i18next.language.startsWith(x.value)
+            }
+          }),
+          initial: 0
+        })
+        i18next.changeLanguage(response.lang)
       } else if (value === options.quit) {
         log(successExitString)
         break
