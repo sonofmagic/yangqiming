@@ -1,7 +1,7 @@
 {
-  "name": "yangqiming",
-  "version": "2.1.1",
-  "description": "yangqiming",
+  "name": "sonofmagic",
+  "version": "1.0.0",
+  "description": "sonofmagic",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
@@ -13,8 +13,8 @@
     "init:rename": "node scripts/init/rename.js",
     "init:bin": "node scripts/init/bin.js",
     "clean": "node scripts/clean.js",
-    "raw": "cross-env TRACE=0 node bin/yangqiming.js",
-    "raw2": "cross-env GITHUB_CI=1 TRACE=0 node ./bin/yangqiming.js"
+    "raw": "cross-env TRACE=0 node bin/sonofmagic.js",
+    "raw2": "cross-env GITHUB_CI=1 TRACE=0 node ./bin/sonofmagic.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
   "keywords": [
     "icebreaker",
     "yangqiming",
+    "sonofmagic",
     "profile",
     "profile-icebreaker",
     "resume"
@@ -90,6 +91,7 @@
     "typescript-transform-paths": "^3.3.1"
   },
   "bin": {
-    "yangqiming": "bin/yangqiming.js"
+    "yangqiming": "bin/yangqiming.js",
+    "sonofmagic": "bin/sonofmagic.js"
   }
 }
