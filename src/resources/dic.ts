@@ -5,7 +5,9 @@ export default {
 
   profile: 'profile',
   profiledescription: 'profiledescription',
-
+  profilecontent: 'profilecontent',
+  profileposition: 'profileposition',
+  profilejob: 'profilejob',
   contact: 'contact',
   contactdescription: 'contactdescription',
 

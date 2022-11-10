@@ -1,10 +1,37 @@
 import type { ITranslation } from '../type'
-import { chalk } from '@/util'
+import { chalk, emoji, dayjs } from '@/util'
+
+import profileData from '@/constants'
+const { gender, name, nickname, startWorkDay } = profileData
+const whenToStartWork = dayjs(startWorkDay)
 export const translation: ITranslation = {
   welcome: 'Welcome to the {{nickname}} information management system',
   promptMsg: `${chalk.greenBright('Please select')} one of the following information entries to query`,
   profile: 'Personal information',
   profiledescription: `Display personal information of {{nickname}}`,
+  profilecontent: [
+    `${chalk.bold(name)} ${chalk.greenBright(nickname)} ${chalk.bold.blueBright(gender)}`,
+    `\n\n${emoji.get('handbag')} ${chalk.bold.greenBright(
+      dayjs().year() - whenToStartWork.year()
+    )} years of experience | ${emoji.get('mortar_board')} Yangzhou University - Software Engineering - Bachelor`,
+    `\n\n${chalk.bold.greenBright('|')} Personal Strengths`,
+    '\nAlways reliable. Kind of into technology',
+    `\n\n${chalk.bold.greenBright('|')} Personal Skills`,
+    '\nGood basic skills',
+    `\n\n${chalk.bold.greenBright('|')} Desired Position`,
+    `\n${emoji.get('art')} More money | ${emoji.get('moneybag')} Less work | ${emoji.get(
+      'point_right'
+    )} Close to home ${emoji.get('laughing')}${emoji.get('joy')}`,
+    `\n\n${chalk.bold.greenBright('|')} Work Experience`,
+    "\nI've been a worker, squeezed to the point of no return \nI've risked my life as a partner for a bad check", // ,最终被踢出局
+    `\n\n${chalk.bold.greenBright('|')} Project Experience`,
+    `\n{{projectsTree}}`,
+    '\n> "人生代代无穷已，江月年年只相似"',
+    '\n Welcome partners who are interested in technology to communicate with each other！'
+  ].join(''),
+  profileposition: 'Entrepreneur/Core Development',
+  profilejob: 'As a front-end development engineer',
+
   contact: 'Contact information',
   contactdescription: `Methods to get in touch with {{nickname}}`,
   photo: 'My Photo',

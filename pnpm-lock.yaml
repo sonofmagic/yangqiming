@@ -37,6 +37,7 @@ specifiers:
   qrcode: ^1.5.1
   rollup: ^2.70.0
   rollup-plugin-terser: ^7.0.2
+  rollup-plugin-visualizer: ^5.8.3
   ts-jest: ^29.0.3
   ts-node: ^10.9.1
   tslib: ^2.4.1
@@ -83,6 +84,7 @@ devDependencies:
   qrcode: registry.npmmirror.com/qrcode/1.5.1
   rollup: registry.npmmirror.com/rollup/2.70.2
   rollup-plugin-terser: registry.npmmirror.com/rollup-plugin-terser/7.0.2_rollup@2.70.2
+  rollup-plugin-visualizer: registry.npmmirror.com/rollup-plugin-visualizer/5.8.3_rollup@2.70.2
   ts-jest: registry.npmmirror.com/ts-jest/29.0.3_r24ewcothphvclnu77pxb4u4se
   ts-node: registry.npmmirror.com/ts-node/10.9.1_cbe7ovvae6zqfnmtgctpgpys54
   tslib: registry.npmmirror.com/tslib/2.4.1
@@ -2240,7 +2242,6 @@ packages:
     name: define-lazy-prop
     version: 2.0.0
     engines: {node: '>=8'}
-    dev: false
 
   registry.npmmirror.com/define-properties/1.1.4:
     resolution: {integrity: sha512-uckOqKcfaVvtBdsVkdPv3XjveQJsNQqmhXgRi8uhvWWuPYZCNlzT8qAyblUgNoXdHdjMTzAqeGjAoli8f+bzPA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/define-properties/-/define-properties-1.1.4.tgz}
@@ -3385,7 +3386,6 @@ packages:
     version: 2.2.1
     engines: {node: '>=8'}
     hasBin: true
-    dev: false
 
   registry.npmmirror.com/is-extglob/2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-extglob/-/is-extglob-2.1.1.tgz}
@@ -3526,7 +3526,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       is-docker: registry.npmmirror.com/is-docker/2.2.1
-    dev: false
 
   registry.npmmirror.com/isexe/2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/isexe/-/isexe-2.0.0.tgz}
@@ -4452,7 +4451,6 @@ packages:
       define-lazy-prop: registry.npmmirror.com/define-lazy-prop/2.0.0
       is-docker: registry.npmmirror.com/is-docker/2.2.1
       is-wsl: registry.npmmirror.com/is-wsl/2.2.0
-    dev: false
 
   registry.npmmirror.com/optionator/0.9.1:
     resolution: {integrity: sha512-74RlY5FCnhq4jRxVUPKDaRwrVNXMqsGsiW6AJw4XK8hmtm10wC0ypZBLw5IIp85NZMr91+qd1RvvENwg7jjRFw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/optionator/-/optionator-0.9.1.tgz}
@@ -4851,6 +4849,25 @@ packages:
       terser: registry.npmmirror.com/terser/5.12.1
     dev: true
 
+  registry.npmmirror.com/rollup-plugin-visualizer/5.8.3_rollup@2.70.2:
+    resolution: {integrity: sha512-QGJk4Bqe4AOat5AjipOh8esZH1nck5X2KFpf4VytUdSUuuuSwvIQZjMGgjcxe/zXexltqaXp5Vx1V3LmnQH15Q==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rollup-plugin-visualizer/-/rollup-plugin-visualizer-5.8.3.tgz}
+    id: registry.npmmirror.com/rollup-plugin-visualizer/5.8.3
+    name: rollup-plugin-visualizer
+    version: 5.8.3
+    engines: {node: '>=14'}
+    hasBin: true
+    peerDependencies:
+      rollup: 2.x || 3.x
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      open: registry.npmmirror.com/open/8.4.0
+      rollup: registry.npmmirror.com/rollup/2.70.2
+      source-map: registry.npmmirror.com/source-map/0.7.4
+      yargs: registry.npmmirror.com/yargs/17.6.2
+    dev: true
+
   registry.npmmirror.com/rollup/2.70.2:
     resolution: {integrity: sha512-EitogNZnfku65I1DD5Mxe8JYRUCy0hkK5X84IlDtUs+O6JRMpRciXTzyCUuX11b5L5pvjH+OmFXiQ3XjabcXgg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rollup/-/rollup-2.70.2.tgz}
     name: rollup
@@ -4976,10 +4993,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  registry.npmmirror.com/source-map/0.7.3:
-    resolution: {integrity: sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/source-map/-/source-map-0.7.3.tgz}
+  registry.npmmirror.com/source-map/0.7.4:
+    resolution: {integrity: sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/source-map/-/source-map-0.7.4.tgz}
     name: source-map
-    version: 0.7.3
+    version: 0.7.4
     engines: {node: '>= 8'}
     dev: true
 
@@ -5143,7 +5160,7 @@ packages:
     dependencies:
       acorn: registry.npmmirror.com/acorn/8.7.0
       commander: registry.npmmirror.com/commander/2.20.3
-      source-map: registry.npmmirror.com/source-map/0.7.3
+      source-map: registry.npmmirror.com/source-map/0.7.4
       source-map-support: registry.npmmirror.com/source-map-support/0.5.21
     dev: true
 

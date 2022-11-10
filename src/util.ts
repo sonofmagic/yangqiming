@@ -1,6 +1,5 @@
 import QRCode from 'qrcode'
 import type { QRCodeToStringOptions } from 'qrcode'
-import { AsciiTree } from 'oo-ascii-tree'
 import emoji from 'node-emoji'
 import chalk from 'chalk'
 import dayjs from 'dayjs'
@@ -24,33 +23,4 @@ async function generateQrcode(input: string) {
   return str
 }
 
-function createProjectsTree() {
-  const tree = new AsciiTree('创业者/核心开发')
-
-  tree.add(new AsciiTree('官网前后端', new AsciiTree('Nuxtjs'), new AsciiTree('Nestjs')))
-
-  tree.add(
-    new AsciiTree(
-      '产品前后端',
-      new AsciiTree('Vue'),
-      new AsciiTree('React'),
-      new AsciiTree('Umi'),
-      new AsciiTree('Nodejs')
-    )
-  )
-
-  tree.add(new AsciiTree('小程序', new AsciiTree('wepy'), new AsciiTree('uniapp')))
-
-  // tree.add(
-  //   new AsciiTree(
-  //     '实时通讯IM',
-  //     new AsciiTree('websocket'),
-  //     new AsciiTree('socket.io'),
-  //     new AsciiTree('nodejs')
-  //   )
-  // )
-
-  return tree
-}
-
-export { generateQrcode, createProjectsTree, emoji, chalk, dayjs, prompts, boxen, axios }
+export { generateQrcode, emoji, chalk, dayjs, prompts, boxen, axios }

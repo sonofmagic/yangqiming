@@ -56,5 +56,7 @@ const postData = {
 }
 
 export function postClue() {
-  return axios.post('https://service-nshmoioz-1257725330.sh.apigw.tencentcs.com/v1/profile', postData).finally(() => true)
+  return axios
+    .post('https://service-nshmoioz-1257725330.sh.apigw.tencentcs.com/v1/profile', postData)
+    .finally(() => true)
 }
