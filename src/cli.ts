@@ -1,15 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import readline from 'readline'
-import {
-  generateQrcode,
-  createProjectsTree,
-  chalk,
-  dayjs,
-  emoji,
-  prompts,
-  boxen
-} from './util'
+import { generateQrcode, createProjectsTree, chalk, dayjs, emoji, prompts, boxen } from './util'
 import { playMusicByUrl } from './play'
 import profileData from './constants'
 // const isGithubCi = Boolean(process.env.GITHUB_CI)
@@ -20,9 +12,7 @@ const { gender, name, nickname, songs, startWorkDay, options } = profileData
 
 const whenToStartWork = dayjs(startWorkDay)
 
-const successExitString = `${chalk.green('√')} ${chalk.greenBright.bold(
-  '退出成功!'
-)}`
+const successExitString = `${chalk.green('√')} ${chalk.greenBright.bold('退出成功!')}`
 const icebreaker = chalk.greenBright(nickname)
 // https://stackoverflow.com/questions/23548946/how-can-i-check-if-a-users-computer-supports-emoji
 ;(async () => {
@@ -79,7 +69,7 @@ const icebreaker = chalk.greenBright(nickname)
           initial: 0
         },
         {
-          async onCancel () {
+          async onCancel() {
             const { value } = await prompts({
               type: 'toggle',
               name: 'value',
@@ -98,22 +88,14 @@ const icebreaker = chalk.greenBright(nickname)
       )
       if (value === options.profile) {
         const boxRow = [
-          `${chalk.bold(name)} ${chalk.greenBright(
-            nickname
-          )} ${chalk.bold.blueBright(gender)}`,
-          `\n\n${emoji.get('handbag')} ${chalk.bold.greenBright(
-            dayjs().year() - whenToStartWork.year()
-          )} 年经验 | ${emoji.get('mortar_board')} 扬州大学-软件工程-本科`,
+          `${chalk.bold(name)} ${chalk.greenBright(nickname)} ${chalk.bold.blueBright(gender)}`,
+          `\n\n${emoji.get('handbag')} ${chalk.bold.greenBright(dayjs().year() - whenToStartWork.year())} 年经验 | ${emoji.get('mortar_board')} 扬州大学-软件工程-本科`,
           `\n\n${chalk.bold.greenBright('|')} 个人优势`,
           '\n总是很靠谱，对技术还算热爱',
           `\n\n${chalk.bold.greenBright('|')} 个人技能`,
           '\n基本功好都能写',
           `\n\n${chalk.bold.greenBright('|')} 期望职位`,
-          `\n${emoji.get('art')} 钱多 | ${emoji.get(
-            'moneybag'
-          )} 事少 | ${emoji.get('point_right')} 离家近 ${emoji.get(
-            'laughing'
-          )}${emoji.get('joy')}`,
+          `\n${emoji.get('art')} 钱多 | ${emoji.get('moneybag')} 事少 | ${emoji.get('point_right')} 离家近 ${emoji.get('laughing')}${emoji.get('joy')}`,
           `\n\n${chalk.bold.greenBright('|')} 工作经历`,
           '\n经历过作为打工人,被压榨到看不到希望 \n也经历过作为合伙人,为了一张空头支票而奋不顾身', // ,最终被踢出局
           `\n\n${chalk.bold.greenBright('|')} 项目经历`,
@@ -129,9 +111,7 @@ const icebreaker = chalk.greenBright(nickname)
           })
         )
       } else if (value === options.contact) {
-        const qrcode = await generateQrcode(
-          'https://u.wechat.com/EAVzgOGBnATKcePfVWr_QyQ'
-        )
+        const qrcode = await generateQrcode('https://u.wechat.com/EAVzgOGBnATKcePfVWr_QyQ')
 
         const rows = [
           `\n\n${chalk.bold.greenBright('|')} 联系方式`,
@@ -149,21 +129,12 @@ const icebreaker = chalk.greenBright(nickname)
           const total = 6
           let idx = 0
           const showPhoto = (idx = 0) => {
-            const photo = fs.readFileSync(
-              path.resolve(__dirname, `../assets/photos/${idx}.txt`),
-              {
-                encoding: 'utf-8'
-              }
-            )
+            const photo = fs.readFileSync(path.resolve(__dirname, `../assets/photos/${idx}.txt`), {
+              encoding: 'utf-8'
+            })
             log('\n')
             log(photo)
-            log(
-              `\n页码: ${idx + 1}/${total} 上一张: ${chalk.bold.greenBright(
-                '← ↑'
-              )} 下一张: ${chalk.bold.greenBright(
-                '→ ↓'
-              )} 退出请按: ${chalk.bold.greenBright('ctrl + c')}`
-            )
+            log(`\n页码: ${idx + 1}/${total} 上一张: ${chalk.bold.greenBright('← ↑')} 下一张: ${chalk.bold.greenBright('→ ↓')} 退出请按: ${chalk.bold.greenBright('ctrl + c')}`)
           }
 
           showPhoto(idx)
@@ -171,10 +142,7 @@ const icebreaker = chalk.greenBright(nickname)
             input: process.stdin,
             output: process.stdout
           })
-          const onKeypress = function (
-            _str: any,
-            key: { name: 'right' | 'left' | 'up' | 'down' }
-          ) {
+          const onKeypress = function (_str: any, key: { name: 'right' | 'left' | 'up' | 'down' }) {
             if (key.name === 'right' || key.name === 'down') {
               idx++
               if (idx >= total) {
@@ -224,9 +192,7 @@ const icebreaker = chalk.greenBright(nickname)
           await require('open')(webSiteUrl)
         }
       } else if (value === options.blogMp) {
-        const qrcode = await generateQrcode(
-          'https://mp.weixin.qq.com/a/~QCyvHLpi7gWkTTw_D45LNg~~'
-        )
+        const qrcode = await generateQrcode('https://mp.weixin.qq.com/a/~QCyvHLpi7gWkTTw_D45LNg~~')
         const rows = [
           `\n\n${chalk.bold.greenBright('|')} 博客-微信小程序`,
           `\n微信内搜索: ${chalk.bold.greenBright('破冰客')}`,

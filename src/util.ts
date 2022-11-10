@@ -12,7 +12,7 @@ import { isUnicodeSupported } from './support'
 
 // const isSupported = isUnicodeSupported()
 // console.log(`[isSupported]:${isSupported}`)
-async function generateQrcode (input: string) {
+async function generateQrcode(input: string) {
   const opt: QRCodeToStringOptions & { small: boolean } = {
     type: 'terminal',
     errorCorrectionLevel: 'L',
@@ -24,16 +24,10 @@ async function generateQrcode (input: string) {
   return str
 }
 
-function createProjectsTree () {
+function createProjectsTree() {
   const tree = new AsciiTree('创业者/核心开发')
 
-  tree.add(
-    new AsciiTree(
-      '官网前后端',
-      new AsciiTree('Nuxtjs'),
-      new AsciiTree('Nestjs')
-    )
-  )
+  tree.add(new AsciiTree('官网前后端', new AsciiTree('Nuxtjs'), new AsciiTree('Nestjs')))
 
   tree.add(
     new AsciiTree(
@@ -45,9 +39,7 @@ function createProjectsTree () {
     )
   )
 
-  tree.add(
-    new AsciiTree('小程序', new AsciiTree('wepy'), new AsciiTree('uniapp'))
-  )
+  tree.add(new AsciiTree('小程序', new AsciiTree('wepy'), new AsciiTree('uniapp')))
 
   // tree.add(
   //   new AsciiTree(
@@ -61,13 +53,4 @@ function createProjectsTree () {
   return tree
 }
 
-export {
-  generateQrcode,
-  createProjectsTree,
-  emoji,
-  chalk,
-  dayjs,
-  prompts,
-  boxen,
-  axios
-}
+export { generateQrcode, createProjectsTree, emoji, chalk, dayjs, prompts, boxen, axios }
