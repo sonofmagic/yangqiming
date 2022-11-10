@@ -4,6 +4,8 @@ import readline from 'readline'
 import { generateQrcode, createProjectsTree, chalk, dayjs, emoji, prompts, boxen } from './util'
 import { playMusicByUrl } from './play'
 import profileData from './constants'
+import { t, init, i18next } from './i18n'
+import Dic from './resources/dic'
 // const isGithubCi = Boolean(process.env.GITHUB_CI)
 
 const log = console.log
@@ -17,6 +19,8 @@ const icebreaker = chalk.greenBright(nickname)
 // https://stackoverflow.com/questions/23548946/how-can-i-check-if-a-users-computer-supports-emoji
 ;(async () => {
   try {
+    await init()
+
     // try {
     //   if (process.env.TRACE !== '0') {
     //     const { postClue } = await import('./post-clue')
@@ -26,7 +30,7 @@ const icebreaker = chalk.greenBright(nickname)
     //   isGithubCi && console.error(error)
     // }
 
-    log(`欢迎来到 ${icebreaker} 信息管理系统`)
+    log(t(Dic.welcome, { nickname: icebreaker }))
     while (true) {
       const { value } = await prompts(
         {
@@ -89,13 +93,17 @@ const icebreaker = chalk.greenBright(nickname)
       if (value === options.profile) {
         const boxRow = [
           `${chalk.bold(name)} ${chalk.greenBright(nickname)} ${chalk.bold.blueBright(gender)}`,
-          `\n\n${emoji.get('handbag')} ${chalk.bold.greenBright(dayjs().year() - whenToStartWork.year())} 年经验 | ${emoji.get('mortar_board')} 扬州大学-软件工程-本科`,
+          `\n\n${emoji.get('handbag')} ${chalk.bold.greenBright(
+            dayjs().year() - whenToStartWork.year()
+          )} 年经验 | ${emoji.get('mortar_board')} 扬州大学-软件工程-本科`,
           `\n\n${chalk.bold.greenBright('|')} 个人优势`,
           '\n总是很靠谱，对技术还算热爱',
           `\n\n${chalk.bold.greenBright('|')} 个人技能`,
           '\n基本功好都能写',
           `\n\n${chalk.bold.greenBright('|')} 期望职位`,
-          `\n${emoji.get('art')} 钱多 | ${emoji.get('moneybag')} 事少 | ${emoji.get('point_right')} 离家近 ${emoji.get('laughing')}${emoji.get('joy')}`,
+          `\n${emoji.get('art')} 钱多 | ${emoji.get('moneybag')} 事少 | ${emoji.get('point_right')} 离家近 ${emoji.get(
+            'laughing'
+          )}${emoji.get('joy')}`,
           `\n\n${chalk.bold.greenBright('|')} 工作经历`,
           '\n经历过作为打工人,被压榨到看不到希望 \n也经历过作为合伙人,为了一张空头支票而奋不顾身', // ,最终被踢出局
           `\n\n${chalk.bold.greenBright('|')} 项目经历`,
@@ -134,7 +142,11 @@ const icebreaker = chalk.greenBright(nickname)
             })
             log('\n')
             log(photo)
-            log(`\n页码: ${idx + 1}/${total} 上一张: ${chalk.bold.greenBright('← ↑')} 下一张: ${chalk.bold.greenBright('→ ↓')} 退出请按: ${chalk.bold.greenBright('ctrl + c')}`)
+            log(
+              `\n页码: ${idx + 1}/${total} 上一张: ${chalk.bold.greenBright('← ↑')} 下一张: ${chalk.bold.greenBright(
+                '→ ↓'
+              )} 退出请按: ${chalk.bold.greenBright('ctrl + c')}`
+            )
           }
 
           showPhoto(idx)

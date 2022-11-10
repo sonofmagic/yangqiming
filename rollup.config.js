@@ -3,6 +3,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import pkg from './package.json'
 import json from '@rollup/plugin-json'
+import builtinModules from 'builtin-modules'
 // import replace from '@rollup/plugin-replace'
 import { terser } from 'rollup-plugin-terser'
 // const isProd = process.env.NODE_ENV === 'production'
@@ -37,7 +38,7 @@ const config = {
     terser(),
     typescript({ tsconfig: './tsconfig.build.json', sourceMap: isDev })
   ],
-  external: [...(pkg.dependencies ? Object.keys(pkg.dependencies) : [])]
+  external: [...(pkg.dependencies ? Object.keys(pkg.dependencies) : []), ...builtinModules]
 }
 
 export default config
