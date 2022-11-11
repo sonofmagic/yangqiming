@@ -1,4 +1,4 @@
-function _isUnicodeSupported () {
+function _isUnicodeSupported() {
   if (process.platform !== 'win32') {
     return process.env.TERM !== 'linux' // Linux console (kernel)
   }
@@ -13,13 +13,8 @@ function _isUnicodeSupported () {
   )
 }
 
-function _isInteractive ({ stream = process.stdout } = {}) {
-  return Boolean(
-    stream &&
-      stream.isTTY &&
-      process.env.TERM !== 'dumb' &&
-      !('CI' in process.env)
-  )
+function _isInteractive({ stream = process.stdout } = {}) {
+  return Boolean(stream && stream.isTTY && process.env.TERM !== 'dumb' && !('CI' in process.env))
 }
 
 export const isUnicodeSupported = _isUnicodeSupported()

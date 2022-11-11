@@ -3,7 +3,7 @@ import fs from 'fs'
 import { chalk, axios } from './util'
 import createPlayer from 'play-sound'
 const player = createPlayer()
-async function playMusicByUrl (url: string, name?: string) {
+async function playMusicByUrl(url: string, name?: string) {
   try {
     const basename = path.basename(url)
 
@@ -18,9 +18,7 @@ async function playMusicByUrl (url: string, name?: string) {
     const ws = fs.createWriteStream(targetPath)
     audio.data.pipe(ws)
     ws.on('finish', () => {
-      console.log(
-        `${chalk.green('√')} ${chalk.bold(`${name || '音乐'}加载完成`)}`
-      )
+      console.log(`${chalk.green('√')} ${chalk.bold(`${name || '音乐'}加载完成`)}`)
       player.play(targetPath)
       // sound.play(targetPath)
     })
