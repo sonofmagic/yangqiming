@@ -48,7 +48,18 @@ export const translation: ITranslation = {
   quitsuccessExitString: `${chalk.green('√')} ${chalk.greenBright.bold('退出成功!')}`,
   changeLanguage: '切换语言',
   changeLanguagedescription: '目前支持中文和英文',
-  changeLanguageselect: '选择你的语言'
+  changeLanguageselect: '选择你的语言',
+
+  wechatId: '微信号',
+  page: '页码',
+  next: '下一张',
+  prev: '上一张',
+  exit: '退出请按',
+
+  directAccess: '直接访问',
+  wechatScan: '打开微信扫一扫',
+  openWithBrowser: '是否直接用浏览器打开?',
+  wechatSearch: '微信内搜索'
 }
 
 export default {

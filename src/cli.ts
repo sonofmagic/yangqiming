@@ -116,9 +116,9 @@ async function main() {
           const qrcode = await generateQrcode('https://u.wechat.com/EAVzgOGBnATKcePfVWr_QyQ')
 
           const rows = [
-            `\n\n${chalk.bold.greenBright('|')} 联系方式`,
+            `\n\n${chalk.bold.greenBright('|')} ${t(Dic.contact)}`,
             '\nGithub: sonofmagic',
-            '\n微信号:\n' +
+            `\n${t(Dic.wechatId)}:\n` +
               boxen(qrcode, {
                 borderStyle: 'round',
                 padding: 1,
@@ -138,9 +138,9 @@ async function main() {
               log('\n')
               log(photo)
               log(
-                `\n页码: ${idx + 1}/${total} 上一张: ${chalk.bold.greenBright('← ↑')} 下一张: ${chalk.bold.greenBright(
-                  '→ ↓'
-                )} 退出请按: ${chalk.bold.greenBright('ctrl + c')}`
+                `\n${t(Dic.page)}: ${idx + 1}/${total} ${t(Dic.prev)}: ${chalk.bold.greenBright('← ↑')} ${t(
+                  Dic.next
+                )}: ${chalk.bold.greenBright('→ ↓')} ${t(Dic.exit)}: ${chalk.bold.greenBright('ctrl + c')}`
               )
             }
 
@@ -176,9 +176,9 @@ async function main() {
           const webSiteUrl = 'https://icebreaker.top'
           const qrcode = await generateQrcode(webSiteUrl)
           const rows = [
-            `\n\n${chalk.bold.greenBright('|')} 博客-Web版`,
-            `\n直接访问: ${webSiteUrl}`,
-            '\n打开微信扫一扫:\n' +
+            `\n\n${chalk.bold.greenBright('|')} ${t(Dic.blogWeb)}`,
+            `\n${t(Dic.directAccess)}: ${webSiteUrl}`,
+            `\n${t(Dic.wechatScan)}:\n` +
               boxen(qrcode, {
                 borderStyle: 'round',
                 padding: 1,
@@ -189,7 +189,7 @@ async function main() {
           const { value } = await prompts({
             type: 'toggle',
             name: 'value',
-            message: '是否直接用浏览器打开?',
+            message: `${t(Dic.openWithBrower)}`,
             active: 'yes',
             inactive: 'no',
             initial: true
@@ -201,9 +201,9 @@ async function main() {
         [options.blogMp]: async () => {
           const qrcode = await generateQrcode('https://mp.weixin.qq.com/a/~QCyvHLpi7gWkTTw_D45LNg~~')
           const rows = [
-            `\n\n${chalk.bold.greenBright('|')} 博客-微信小程序`,
-            `\n微信内搜索: ${chalk.bold.greenBright('破冰客')}`,
-            '\n打开微信扫一扫:\n' +
+            `\n\n${chalk.bold.greenBright('|')} ${t(Dic.blogMp)}`,
+            `\n${t(Dic.wechatSearch)}: ${chalk.bold.greenBright('破冰客')}`,
+            `\n${t(Dic.wechatScan)}:\n` +
               boxen(qrcode, {
                 borderStyle: 'round',
                 padding: 1,

@@ -48,7 +48,19 @@ export const translation: ITranslation = {
   quitsuccessExitString: `${chalk.green('√')} ${chalk.greenBright.bold('Exit succeeded!')}`,
   changeLanguage: 'Switch language',
   changeLanguagedescription: 'Currently, Chinese and English are supported',
-  changeLanguageselect: 'Choose your language'
+  changeLanguageselect: 'Choose your language',
+
+  wechatId: 'Wechat id',
+
+  page: 'page',
+  next: 'next',
+  prev: 'prev',
+  exit: 'exit',
+
+  directAccess: 'Direct Access',
+  wechatScan: 'Open WeChat and scan',
+  openWithBrowser: 'Open directly in browser?',
+  wechatSearch: 'WeChat search'
 }
 
 export default {

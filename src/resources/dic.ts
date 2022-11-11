@@ -31,5 +31,17 @@ export default {
 
   changeLanguage: 'changeLanguage',
   changeLanguagedescription: 'changeLanguagedescription',
-  changeLanguageselect: 'changeLanguageselect'
+  changeLanguageselect: 'changeLanguageselect',
+
+  wechatId: 'wechatId',
+  wechatSearch: 'wechatSearch',
+  wechatScan: 'wechatScan',
+  page: 'page',
+  next: 'next',
+  prev: 'prev',
+  exit: 'exit',
+
+  directAccess: 'directAccess',
+
+  openWithBrower: 'openWithBrowser'
 } as const
