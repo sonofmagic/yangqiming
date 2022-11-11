@@ -1,9 +1,8 @@
 import type { ITranslation } from '../type'
 import { chalk, emoji, dayjs } from '@/util'
+import { profileData } from '@/constants'
+const { gender, name, nickname, whenToStartWork } = profileData
 
-import profileData from '@/constants'
-const { gender, name, nickname, startWorkDay } = profileData
-const whenToStartWork = dayjs(startWorkDay)
 export const translation: ITranslation = {
   welcome: 'Welcome to the {{nickname}} information management system',
   promptMsg: `${chalk.greenBright('Please select')} one of the following information entries to query`,

@@ -1,20 +1,18 @@
 import fs from 'fs'
 import path from 'path'
 import readline from 'readline'
-import { generateQrcode, chalk, dayjs, emoji, prompts, boxen } from './util'
+import { generateQrcode, chalk, prompts, boxen } from './util'
 import { createProjectsTree } from './project'
 // import { playMusicByUrl } from './play'
-import profileData from './constants'
-import { t, init, i18next } from './i18n'
-import Dic from './resources/dic'
+import { optionsData, profileData } from './constants'
+import { t, init, i18next, Dic } from './i18n'
+
 // const isGithubCi = Boolean(process.env.GITHUB_CI)
 
 const log = console.log
 
-const { gender, name, nickname, startWorkDay, options } = profileData
-
-const whenToStartWork = dayjs(startWorkDay)
-
+const { nickname } = profileData
+const options = optionsData
 const successExitString = t(Dic.quitsuccessExitString)
 const icebreaker = chalk.greenBright(nickname)
 // https://stackoverflow.com/questions/23548946/how-can-i-check-if-a-users-computer-supports-emoji
