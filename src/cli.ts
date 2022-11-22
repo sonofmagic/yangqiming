@@ -1,12 +1,13 @@
 import fs from 'fs'
 import path from 'path'
 import readline from 'readline'
-import { generateQrcode, chalk, prompts, boxen } from './util'
+import { generateQrcode, chalk, prompts, boxen, emoji } from './util'
 import { createProjectsTree } from './project'
 // import { playMusicByUrl } from './play'
 import { optionsData, profileData } from './constants'
 import { t, init, i18next, Dic } from './i18n'
-
+import { getRepoList } from './repos'
+import ora from 'ora'
 // const isGithubCi = Boolean(process.env.GITHUB_CI)
 
 const log = console.log
@@ -52,6 +53,11 @@ async function main() {
           description: t(Dic.photodescription)
         },
         {
+          title: t(Dic.myRepositories),
+          value: options.myRepositories,
+          description: t(Dic.myRepositoriesdescription)
+        },
+        {
           title: t(Dic.blogWeb),
           value: options.blogWeb,
           description: t(Dic.blogWebdescription)
@@ -66,6 +72,7 @@ async function main() {
           value: options.changeLanguage,
           description: t(Dic.changeLanguagedescription)
         },
+
         // {
         //   title: t(Dic.music),
         //   value: options.music,
@@ -153,6 +160,57 @@ async function main() {
               resolve(true)
             })
           })
+        },
+        [options.myRepositories]: async () => {
+          const spinner = ora({
+            spinner: 'soccerHeader',
+            text: 'Fetching Repos from Github ...'
+          }).start()
+          try {
+            const repos = await getRepoList()
+            spinner.stop()
+            let initial = 0
+            let repoPtr = 1
+            while (repoPtr) {
+              await prompts(
+                {
+                  type: 'select',
+                  name: 'url',
+                  message: 'repos list',
+                  choices: repos.map((x, idx) => {
+                    return {
+                      title:
+                        x.name +
+                        ` ${emoji.get('star')}:${x.stargazers_count} ${emoji.get('fork_and_knife')}:${x.forks_count}`,
+                      description: x.description,
+                      value: {
+                        value: x.html_url,
+                        index: idx
+                      }
+                    }
+                  }),
+                  initial
+                },
+                {
+                  async onSubmit(prompt, url) {
+                    initial = url.index
+                    await require('open')(url.value)
+                  },
+                  onCancel() {
+                    repoPtr = 0
+                  }
+                }
+              )
+              // if (url) {
+              //   initial = url.index
+              //   await require('open')(url.value)
+              // }
+            }
+          } catch (error) {
+            console.warn('fetching data from Github failed, please retry.')
+          } finally {
+            spinner.stop()
+          }
         },
         [options.blogWeb]: async () => {
           const webSiteUrl = 'https://icebreaker.top'

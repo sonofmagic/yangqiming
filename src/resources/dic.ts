@@ -43,5 +43,8 @@ export default {
 
   directAccess: 'directAccess',
 
-  openWithBrower: 'openWithBrowser'
+  openWithBrower: 'openWithBrowser',
+
+  myRepositories: 'myRepositories',
+  myRepositoriesdescription: 'myRepositoriesdescription'
 } as const
