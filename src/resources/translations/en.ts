@@ -60,7 +60,13 @@ export const translation: ITranslation = {
   directAccess: 'Direct Access',
   wechatScan: 'Open WeChat and scan',
   openWithBrowser: 'Open directly in browser?',
-  wechatSearch: 'WeChat search'
+  wechatSearch: 'WeChat search',
+
+  myRepositories: 'My OpenSource Repos',
+  myRepositoriesdescription: 'Fetch data from Github',
+  myRepositoriesLoadingFailMessage: 'Fetching data from Github failed, please retry.',
+  myRepositoriesLoadingText: 'Fetching Repos from Github...',
+  myRepositoriesPromptsMessage: 'Repos List'
 }
 
 export default {

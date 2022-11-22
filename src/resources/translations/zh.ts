@@ -59,7 +59,13 @@ export const translation: ITranslation = {
   directAccess: '直接访问',
   wechatScan: '打开微信扫一扫',
   openWithBrowser: '是否直接用浏览器打开?',
-  wechatSearch: '微信内搜索'
+  wechatSearch: '微信内搜索',
+
+  myRepositories: '我的开源',
+  myRepositoriesdescription: '从Github拉取数据',
+  myRepositoriesLoadingFailMessage: '从Github拉取数据失败，请检查你的网络连接后重试',
+  myRepositoriesLoadingText: '从Github拉取数据中...',
+  myRepositoriesPromptsMessage: '项目列表'
 }
 
 export default {

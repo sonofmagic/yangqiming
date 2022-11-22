@@ -2,7 +2,10 @@
   "extends": "@tsconfig/recommended/tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDirs": ["src", "test"],
+    "rootDirs": [
+      "src",
+      "test"
+    ],
     "declaration": false,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
@@ -10,12 +13,30 @@
     "resolveJsonModule": true,
     "moduleResolution": "Node",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
     "plugins": [
-      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true
+      }
     ]
   },
-  "exclude": ["dist", "node_modules", "test/types"],
-  "include": ["src/**/*", "types/**/*", "test/**/*"]
+  "exclude": [
+    "dist",
+    "node_modules",
+    "test/types"
+  ],
+  "include": [
+    "src/**/*",
+    "types/**/*",
+    "test/**/*"
+  ],
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  }
 }
