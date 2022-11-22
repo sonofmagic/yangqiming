@@ -57,5 +57,6 @@ export const optionsData = {
   music: 'music',
   quit: 'quit',
   photo: 'photo',
-  changeLanguage: 'changeLanguage'
+  changeLanguage: 'changeLanguage',
+  myRepositories: 'myRepositories'
 }

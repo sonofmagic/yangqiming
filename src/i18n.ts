@@ -1,12 +1,16 @@
 import i18next from 'i18next'
-import I18nextCLILanguageDetector from 'i18next-cli-language-detector'
 import resources from './resources'
 import Dic from './resources/dic'
-export const init = i18next.use(I18nextCLILanguageDetector).init({
-  // lng: 'zh',
-  // debug: true,
-  resources
-})
+import { osLocale } from 'os-locale'
+export async function init() {
+  const locale = await osLocale()
+  const lng = locale.startsWith('zh') ? 'zh' : 'en'
+  return await i18next.init({
+    lng,
+    // debug: true,
+    resources
+  })
+}
 type tParameters = Parameters<typeof i18next.t>
 
 export function t(
