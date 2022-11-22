@@ -14,7 +14,7 @@ const log = console.log
 
 const { nickname } = profileData
 const options = optionsData
-const successExitString = t(Dic.quitsuccessExitString)
+
 const icebreaker = chalk.greenBright(nickname)
 // https://stackoverflow.com/questions/23548946/how-can-i-check-if-a-users-computer-supports-emoji
 
@@ -277,7 +277,7 @@ async function main() {
           await i18next.changeLanguage(response.lang)
         },
         [options.quit]: () => {
-          log(successExitString)
+          log(t(Dic.quitsuccessExitString))
           ptr = 0
         }
         // [options.music]: async () => {
@@ -320,7 +320,7 @@ async function main() {
               initial: false
             })
             if (value) {
-              log(successExitString)
+              log(t(Dic.quitsuccessExitString))
               process.exit()
             }
             return true
