@@ -19,7 +19,7 @@ const icebreaker = chalk.greenBright(nickname)
 
 async function main() {
   try {
-    await init()
+    await init
 
     // try {
     //   if (process.env.TRACE !== '0') {
