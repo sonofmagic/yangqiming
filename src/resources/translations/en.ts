@@ -63,7 +63,10 @@ export const translation: ITranslation = {
   wechatSearch: 'WeChat search',
 
   myRepositories: 'My OpenSource Repos',
-  myRepositoriesdescription: 'Fetch data from Github'
+  myRepositoriesdescription: 'Fetch data from Github',
+  myRepositoriesLoadingFailMessage: 'Fetching data from Github failed, please retry.',
+  myRepositoriesLoadingText: 'Fetching Repos from Github...',
+  myRepositoriesPromptsMessage: 'Repos List'
 }
 
 export default {

@@ -46,5 +46,8 @@ export default {
   openWithBrower: 'openWithBrowser',
 
   myRepositories: 'myRepositories',
-  myRepositoriesdescription: 'myRepositoriesdescription'
+  myRepositoriesdescription: 'myRepositoriesdescription',
+  myRepositoriesLoadingText: 'myRepositoriesLoadingText',
+  myRepositoriesLoadingFailMessage: 'myRepositoriesLoadingFailMessage',
+  myRepositoriesPromptsMessage: 'myRepositoriesPromptsMessage'
 } as const

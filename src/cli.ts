@@ -164,7 +164,7 @@ async function main() {
         [options.myRepositories]: async () => {
           const spinner = ora({
             spinner: 'soccerHeader',
-            text: 'Fetching Repos from Github ...'
+            text: t(Dic.myRepositoriesLoadingText)
           }).start()
           try {
             const repos = await getRepoList()
@@ -176,7 +176,7 @@ async function main() {
                 {
                   type: 'select',
                   name: 'url',
-                  message: 'repos list',
+                  message: t(Dic.myRepositoriesPromptsMessage),
                   choices: repos.map((x, idx) => {
                     return {
                       title:
@@ -207,7 +207,7 @@ async function main() {
               // }
             }
           } catch (error) {
-            console.warn('fetching data from Github failed, please retry.')
+            console.warn(t(Dic.myRepositoriesLoadingFailMessage))
           } finally {
             spinner.stop()
           }
