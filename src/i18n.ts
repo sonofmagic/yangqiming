@@ -2,14 +2,11 @@ import i18next from 'i18next'
 import I18nextCLILanguageDetector from 'i18next-cli-language-detector'
 import resources from './resources'
 import Dic from './resources/dic'
-export async function init() {
-  await i18next.use(I18nextCLILanguageDetector).init({
-    // lng: 'zh',
-    // debug: true,
-    resources
-  })
-}
-
+export const init = i18next.use(I18nextCLILanguageDetector).init({
+  // lng: 'zh',
+  // debug: true,
+  resources
+})
 type tParameters = Parameters<typeof i18next.t>
 
 export function t(

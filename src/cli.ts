@@ -19,7 +19,7 @@ const icebreaker = chalk.greenBright(nickname)
 
 async function main() {
   try {
-    await init()
+    await init
 
     // try {
     //   if (process.env.TRACE !== '0') {
@@ -32,71 +32,53 @@ async function main() {
 
     log(t(Dic.welcome, { nickname: icebreaker }))
     let ptr = 1
+    let initial = 0
+
     while (ptr) {
-      const { value } = await prompts(
+      const choices = [
         {
-          type: 'select',
-          name: 'value',
-          message: t(Dic.promptMsg) as string,
-          choices: [
-            {
-              title: t(Dic.profile),
-              value: options.profile,
-              description: t(Dic.profiledescription, { nickname: icebreaker })
-            },
-            {
-              title: t(Dic.contact),
-              value: options.contact,
-              description: t(Dic.contactdescription, { nickname: icebreaker })
-            },
-            {
-              title: t(Dic.photo),
-              value: options.photo,
-              description: t(Dic.photodescription)
-            },
-            {
-              title: t(Dic.blogWeb),
-              value: options.blogWeb,
-              description: t(Dic.blogWebdescription)
-            },
-            {
-              title: t(Dic.blogMp),
-              value: options.blogMp,
-              description: t(Dic.blogMpdescription)
-            },
-            {
-              title: t(Dic.changeLanguage),
-              value: options.changeLanguage,
-              description: t(Dic.changeLanguagedescription)
-            },
-            // {
-            //   title: t(Dic.music),
-            //   value: options.music,
-            //   description: t(Dic.musicdescription)
-            // },
-            { title: t(Dic.quit), value: options.quit, description: t(Dic.quitdescription) }
-          ],
-          initial: 0
+          title: t(Dic.profile),
+          value: options.profile,
+          description: t(Dic.profiledescription, { nickname: icebreaker })
         },
         {
-          async onCancel() {
-            const { value } = await prompts({
-              type: 'toggle',
-              name: 'value',
-              message: t(Dic.quitprompt) as string,
-              active: 'yes',
-              inactive: 'no',
-              initial: false
-            })
-            if (value) {
-              log(successExitString)
-              process.exit()
-            }
-            return true
-          }
-        }
-      )
-      const fnMap = {
+          title: t(Dic.contact),
+          value: options.contact,
+          description: t(Dic.contactdescription, { nickname: icebreaker })
+        },
+        {
+          title: t(Dic.photo),
+          value: options.photo,
+          description: t(Dic.photodescription)
+        },
+        {
+          title: t(Dic.blogWeb),
+          value: options.blogWeb,
+          description: t(Dic.blogWebdescription)
+        },
+        {
+          title: t(Dic.blogMp),
+          value: options.blogMp,
+          description: t(Dic.blogMpdescription)
+        },
+        {
+          title: t(Dic.changeLanguage),
+          value: options.changeLanguage,
+          description: t(Dic.changeLanguagedescription)
+        },
+        // {
+        //   title: t(Dic.music),
+        //   value: options.music,
+        //   description: t(Dic.musicdescription)
+        // },
+        { title: t(Dic.quit), value: options.quit, description: t(Dic.quitdescription) }
+      ]
+      const idxMap = choices.reduce<Record<typeof choices[number]['value'], number>>((acc, cur, idx) => {
+        acc[cur.value] = idx
+        return acc
+      }, {})
+
+      const fnMap = Object.entries({
         [options.profile]: () => {
           log(
             boxen(
@@ -234,7 +216,7 @@ async function main() {
             }),
             initial: 0
           })
-          i18next.changeLanguage(response.lang)
+          await i18next.changeLanguage(response.lang)
         },
         [options.quit]: () => {
           log(successExitString)
@@ -253,7 +235,41 @@ async function main() {
         //     await playMusicByUrl(song.url)
         //   }
         // }
-      }
+      }).reduce<Record<typeof choices[number]['value'], Function>>((acc, [key, fn]) => {
+        acc[key] = () => {
+          initial = idxMap[key] ?? 0
+          return fn()
+        }
+        return acc
+      }, {})
+
+      const { value } = await prompts(
+        {
+          type: 'select',
+          name: 'value',
+          message: t(Dic.promptMsg) as string,
+          choices,
+          initial
+        },
+        {
+          async onCancel() {
+            const { value } = await prompts({
+              type: 'toggle',
+              name: 'value',
+              message: t(Dic.quitprompt) as string,
+              active: 'yes',
+              inactive: 'no',
+              initial: false
+            })
+            if (value) {
+              log(successExitString)
+              process.exit()
+            }
+            return true
+          }
+        }
+      )
+
       const fn = fnMap[value]
       if (fn) {
         await fn()
