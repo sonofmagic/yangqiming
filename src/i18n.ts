@@ -9,6 +9,15 @@ export async function init() {
     resources
   })
 }
-export const t = i18next.t
+
+type tParameters = Parameters<typeof i18next.t>
+
+export function t(
+  key: tParameters[0],
+  options?: tParameters[2] & Record<string, unknown>,
+  defaultValue?: tParameters[1]
+) {
+  return i18next.t(key, defaultValue, options)
+}
 
 export { i18next, Dic }
