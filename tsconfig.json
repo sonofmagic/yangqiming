@@ -32,9 +32,13 @@
   "include": [
     "src/**/*",
     "types/**/*",
-    "test/**/*"
+    "test/**/*",
+    "dts/**/*"
   ],
   "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    },
     "require": [
       "tsconfig-paths/register"
     ]

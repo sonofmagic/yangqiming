@@ -18,7 +18,7 @@ const options = optionsData
 const icebreaker = chalk.greenBright(nickname)
 // https://stackoverflow.com/questions/23548946/how-can-i-check-if-a-users-computer-supports-emoji
 
-async function main() {
+export async function main() {
   try {
     await init()
 
@@ -337,9 +337,10 @@ async function main() {
     console.error(error)
   }
 }
-
-main()
-
+// @ts-ignore
+if (!__TEST__) {
+  main()
+}
 // ;(async () => {
 
 // })()
