@@ -1,6 +1,6 @@
 {
   "name": "yangqiming",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "description": "yangqiming",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
