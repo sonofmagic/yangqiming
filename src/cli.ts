@@ -3,11 +3,13 @@ import path from 'path'
 import readline from 'readline'
 import { generateQrcode, chalk, prompts, boxen, emoji } from './util'
 import { createProjectsTree } from './project'
+import { isUnicodeSupported } from './support'
 // import { playMusicByUrl } from './play'
 import { optionsData, profileData } from './constants'
 import { t, init, i18next, Dic } from './i18n'
 import { getRepoList } from './repos'
 import ora from 'ora'
+
 // const isGithubCi = Boolean(process.env.GITHUB_CI)
 
 const log = console.log
@@ -18,7 +20,7 @@ const options = optionsData
 const icebreaker = chalk.greenBright(nickname)
 // https://stackoverflow.com/questions/23548946/how-can-i-check-if-a-users-computer-supports-emoji
 
-async function main() {
+export async function main() {
   try {
     await init()
 
@@ -181,7 +183,9 @@ async function main() {
                     return {
                       title:
                         x.name +
-                        ` ${emoji.get('star')}:${x.stargazers_count} ${emoji.get('fork_and_knife')}:${x.forks_count}`,
+                        ` (${isUnicodeSupported ? emoji.get('star') : 'star'}:${x.stargazers_count} ${
+                          isUnicodeSupported ? emoji.get('fork_and_knife') : 'fork'
+                        }:${x.forks_count})`,
                       description: x.description,
                       value: {
                         value: x.html_url,
@@ -253,26 +257,22 @@ async function main() {
           log(rows.join(''))
         },
         [options.changeLanguage]: async () => {
+          const choices = [
+            {
+              title: 'English',
+              value: 'en'
+            },
+            {
+              title: '中文',
+              value: 'zh'
+            }
+          ]
           const response = await prompts({
             type: 'select',
             name: 'lang',
-            message: t(Dic.changeLanguageselect) as string,
-            choices: [
-              {
-                title: 'English',
-                value: 'en'
-              },
-              {
-                title: '中文',
-                value: 'zh'
-              }
-            ].map((x) => {
-              return {
-                ...x,
-                selected: i18next.language.startsWith(x.value)
-              }
-            }),
-            initial: 0
+            message: t(Dic.changeLanguageselect),
+            choices,
+            initial: choices.findIndex((x) => i18next.language.startsWith(x.value))
           })
           await i18next.changeLanguage(response.lang)
         },
@@ -337,9 +337,10 @@ async function main() {
     console.error(error)
   }
 }
-
-main()
-
+// @ts-ignore
+if (!__TEST__) {
+  main()
+}
 // ;(async () => {
 
 // })()

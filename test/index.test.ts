@@ -1,12 +1,12 @@
-import { foo, wait } from '@/index'
-
-describe('[Default]', () => {
-  test('foo should be bar', () => {
-    expect(foo).toBe('bar')
-  })
-
-  test('wait 100ms', async () => {
-    const flag = await wait(100)
-    expect(flag).toBe(true)
+describe('cli test', () => {
+  it('common', async () => {
+    const { main } = await import('@/cli')
+    // process.stdout.addListener('data', (...args) => {
+    //   console.log(args)
+    // })
+    // process.stderr.on('data', (...args) => {
+    //   console.log(args)
+    // })
+    await main()
   })
 })

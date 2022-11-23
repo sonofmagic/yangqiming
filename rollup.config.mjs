@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs'
 import json from '@rollup/plugin-json'
 import builtinModules from 'builtin-modules'
 import { visualizer } from 'rollup-plugin-visualizer'
-// import replace from '@rollup/plugin-replace'
+import replace from '@rollup/plugin-replace'
 import { terser } from 'rollup-plugin-terser'
 const pkg = JSON.parse(
   readFileSync('./package.json', {
@@ -46,6 +46,12 @@ const config = {
     json(),
     nodeResolve({
       preferBuiltins: true
+    }),
+    replace({
+      preventAssignment: true,
+      values: {
+        __TEST__: JSON.stringify(false)
+      }
     }),
     commonjs(),
     terser(),
