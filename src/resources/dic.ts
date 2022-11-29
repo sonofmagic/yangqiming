@@ -49,5 +49,15 @@ export default {
   myRepositoriesdescription: 'myRepositoriesdescription',
   myRepositoriesLoadingText: 'myRepositoriesLoadingText',
   myRepositoriesLoadingFailMessage: 'myRepositoriesLoadingFailMessage',
-  myRepositoriesPromptsMessage: 'myRepositoriesPromptsMessage'
+  myRepositoriesPromptsMessage: 'myRepositoriesPromptsMessage',
+
+  leaveMeMessage: 'leaveMeMessage',
+  leaveMeMessagedescription: 'leaveMeMessagedescription',
+  leaveMeMessagepromptmessage: 'leaveMeMessagepromptmessage',
+  leaveMeMessagepromptchoicestitlename: 'leaveMeMessagepromptchoicestitlename',
+  leaveMeMessagepromptchoicesbodyname: 'leaveMeMessagepromptchoicesbodyname',
+  leaveMeMessagepromptvalidaterequiredtitle: 'leaveMeMessagepromptvalidaterequiredtitle',
+  leaveMeMessagepromptvalidaterequiredbody: 'leaveMeMessagepromptvalidaterequiredbody',
+  leaveMeMessagepromptsuccessmsg: 'leaveMeMessagepromptsuccessmsg',
+  about: 'about'
 } as const

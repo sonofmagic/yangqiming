@@ -9,7 +9,9 @@ import { optionsData, profileData } from './constants'
 import { t, init, i18next, Dic } from './i18n'
 import { getRepoList } from './repos'
 import ora from 'ora'
-
+// @ts-ignore
+import { Form } from 'enquirer'
+import { createIssue } from './post-clue'
 // const isGithubCi = Boolean(process.env.GITHUB_CI)
 
 const log = console.log
@@ -68,6 +70,11 @@ export async function main() {
           title: t(Dic.blogMp),
           value: options.blogMp,
           description: t(Dic.blogMpdescription)
+        },
+        {
+          title: t(Dic.leaveMeMessage),
+          value: options.leaveMsg,
+          description: t(Dic.leaveMeMessagedescription)
         },
         {
           title: t(Dic.changeLanguage),
@@ -255,6 +262,46 @@ export async function main() {
               })
           ]
           log(rows.join(''))
+        },
+        [options.leaveMsg]: async () => {
+          const formValue = {
+            title: '',
+            body: ''
+          }
+
+          const prompt = new Form({
+            name: 'issue',
+            message: t(Dic.leaveMeMessagepromptmessage),
+            choices: [
+              { name: 'title', message: t(Dic.leaveMeMessagepromptchoicestitlename), initial: formValue.title },
+              { name: 'body', message: t(Dic.leaveMeMessagepromptchoicesbodyname), initial: formValue.body }
+            ],
+
+            validate: (value: typeof formValue) => {
+              if (!value.title) {
+                return t(Dic.leaveMeMessagepromptvalidaterequiredtitle)
+              }
+              if (!value.body) {
+                return t(Dic.leaveMeMessagepromptvalidaterequiredbody)
+              }
+              return true
+            }
+          })
+
+          const res = await prompt.run()
+          formValue.body = res.body
+          formValue.title = res.title
+          const spinner = ora({
+            spinner: 'soccerHeader',
+            text: 'Posting data to my serverless function... '
+          }).start()
+          try {
+            await createIssue(formValue)
+            log(chalk.greenBright(t(Dic.leaveMeMessagepromptsuccessmsg)))
+          } catch (error) {
+          } finally {
+            spinner.stop()
+          }
         },
         [options.changeLanguage]: async () => {
           const choices = [

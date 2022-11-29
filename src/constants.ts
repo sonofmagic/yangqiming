@@ -54,6 +54,8 @@ export const optionsData = {
   // wechat: 'wechat',
   blogWeb: 'blogWeb',
   blogMp: 'blogMp',
+  leaveMsg: 'leaveMsg',
+  about: 'about',
   music: 'music',
   quit: 'quit',
   photo: 'photo',

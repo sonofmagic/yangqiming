@@ -66,7 +66,16 @@ export const translation: ITranslation = {
   myRepositoriesdescription: 'Fetch data from Github',
   myRepositoriesLoadingFailMessage: 'Fetching data from Github failed, please retry.',
   myRepositoriesLoadingText: 'Fetching Repos from Github...',
-  myRepositoriesPromptsMessage: 'Repos List'
+  myRepositoriesPromptsMessage: 'Repos List',
+  leaveMeMessage: 'Leave me a message',
+  leaveMeMessagedescription: 'Write some words',
+  leaveMeMessagepromptmessage: 'Please fill in the form below',
+  leaveMeMessagepromptchoicestitlename: 'title',
+  leaveMeMessagepromptchoicesbodyname: 'content',
+  leaveMeMessagepromptvalidaterequiredbody: 'Please fill in the body!',
+  leaveMeMessagepromptvalidaterequiredtitle: 'Please fill in the title!',
+  leaveMeMessagepromptsuccessmsg: 'Leave a message successfully!',
+  about: 'about'
 }
 
 export default {

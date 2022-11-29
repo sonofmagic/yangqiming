@@ -65,7 +65,17 @@ export const translation: ITranslation = {
   myRepositoriesdescription: '从Github拉取数据',
   myRepositoriesLoadingFailMessage: '从Github拉取数据失败，请检查你的网络连接后重试',
   myRepositoriesLoadingText: '从Github拉取数据中...',
-  myRepositoriesPromptsMessage: '项目列表'
+  myRepositoriesPromptsMessage: '项目列表',
+
+  leaveMeMessage: '给我留言',
+  leaveMeMessagedescription: '随便写写',
+  leaveMeMessagepromptchoicestitlename: '标题',
+  leaveMeMessagepromptchoicesbodyname: '正文',
+  leaveMeMessagepromptmessage: '请在下方填写',
+  leaveMeMessagepromptvalidaterequiredbody: '请填写正文!',
+  leaveMeMessagepromptvalidaterequiredtitle: '请填写标题!',
+  leaveMeMessagepromptsuccessmsg: '留言成功!',
+  about: '关于'
 }
 
 export default {
