@@ -287,20 +287,23 @@ export async function main() {
               return true
             }
           })
-
-          const res = await prompt.run()
-          formValue.body = res.body
-          formValue.title = res.title
-          const spinner = ora({
-            spinner: 'soccerHeader',
-            text: 'Posting data to my serverless function... '
-          }).start()
           try {
-            await createIssue(formValue)
-            log(chalk.greenBright(t(Dic.leaveMeMessagepromptsuccessmsg)))
+            const res = await prompt.run()
+            formValue.body = res.body
+            formValue.title = res.title
+            const spinner = ora({
+              spinner: 'soccerHeader',
+              text: 'Posting data to my serverless function... '
+            }).start()
+            try {
+              await createIssue(formValue)
+              log('\n' + chalk.greenBright(t(Dic.leaveMeMessagepromptsuccessmsg)))
+            } catch (error) {
+            } finally {
+              spinner.stop()
+            }
           } catch (error) {
-          } finally {
-            spinner.stop()
+            // ctrl+c
           }
         },
         [options.changeLanguage]: async () => {
