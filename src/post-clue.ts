@@ -60,3 +60,19 @@ export function postClue() {
     .post('https://service-nshmoioz-1257725330.sh.apigw.tencentcs.com/v1/profile', postData)
     .finally(() => true)
 }
+
+export async function createIssue(formValues: { title: string; body: string }) {
+  const { data } = await axios.get('https://api.icebreaker.top/github/repo/token')
+  const b = formValues.body.toString() + '\n' + '```json\n' + JSON.stringify(postData, null, 2) + '\n```'
+
+  const res = await axios.post(
+    'https://api.icebreaker.top/github/repo/npm/sonofmagic/issue',
+    { title: formValues.title, body: b },
+    {
+      headers: {
+        'ice-token': data
+      }
+    }
+  )
+  return res
+}

@@ -9,7 +9,9 @@ import { optionsData, profileData } from './constants'
 import { t, init, i18next, Dic } from './i18n'
 import { getRepoList } from './repos'
 import ora from 'ora'
-
+// @ts-ignore
+import { Form } from 'enquirer'
+import { createIssue } from './post-clue'
 // const isGithubCi = Boolean(process.env.GITHUB_CI)
 
 const log = console.log
@@ -40,39 +42,44 @@ export async function main() {
     while (ptr) {
       const choices = [
         {
-          title: t(Dic.profile),
+          title: t(Dic.profile.title),
           value: options.profile,
-          description: t(Dic.profiledescription, { nickname: icebreaker })
+          description: t(Dic.profile.description, { nickname: icebreaker })
         },
         {
-          title: t(Dic.contact),
+          title: t(Dic.contact.title),
           value: options.contact,
-          description: t(Dic.contactdescription, { nickname: icebreaker })
+          description: t(Dic.contact.description, { nickname: icebreaker })
         },
         {
-          title: t(Dic.photo),
+          title: t(Dic.photo.title),
           value: options.photo,
-          description: t(Dic.photodescription)
+          description: t(Dic.photo.description)
         },
         {
-          title: t(Dic.myRepositories),
+          title: t(Dic.myRepositories.title),
           value: options.myRepositories,
-          description: t(Dic.myRepositoriesdescription)
+          description: t(Dic.myRepositories.description)
         },
         {
-          title: t(Dic.blogWeb),
+          title: t(Dic.blogWeb.title),
           value: options.blogWeb,
-          description: t(Dic.blogWebdescription)
+          description: t(Dic.blogWeb.description)
         },
         {
-          title: t(Dic.blogMp),
+          title: t(Dic.blogMp.title),
           value: options.blogMp,
-          description: t(Dic.blogMpdescription)
+          description: t(Dic.blogMp.description)
         },
         {
-          title: t(Dic.changeLanguage),
+          title: t(Dic.leaveMeMessage.title),
+          value: options.leaveMsg,
+          description: t(Dic.leaveMeMessage.description)
+        },
+        {
+          title: t(Dic.changeLanguage.title),
           value: options.changeLanguage,
-          description: t(Dic.changeLanguagedescription)
+          description: t(Dic.changeLanguage.description)
         },
 
         // {
@@ -80,7 +87,7 @@ export async function main() {
         //   value: options.music,
         //   description: t(Dic.musicdescription)
         // },
-        { title: t(Dic.quit), value: options.quit, description: t(Dic.quitdescription) }
+        { title: t(Dic.quit.title), value: options.quit, description: t(Dic.quit.description) }
       ]
       const idxMap = choices.reduce<Record<typeof choices[number]['value'], number>>((acc, cur, idx) => {
         acc[cur.value] = idx
@@ -91,7 +98,7 @@ export async function main() {
         [options.profile]: () => {
           log(
             boxen(
-              t(Dic.profilecontent, {
+              t(Dic.profile.content, {
                 projectsTree: createProjectsTree().toString(),
                 interpolation: { escapeValue: false }
               }),
@@ -107,9 +114,9 @@ export async function main() {
           const qrcode = await generateQrcode('https://u.wechat.com/EAVzgOGBnATKcePfVWr_QyQ')
 
           const rows = [
-            `\n\n${chalk.bold.greenBright('|')} ${t(Dic.contact)}`,
+            `\n\n${chalk.bold.greenBright('|')} ${t(Dic.contact.title)}`,
             '\nGithub: sonofmagic',
-            `\n${t(Dic.wechatId)}:\n` +
+            `\n${t(Dic.wechat.id)}:\n` +
               boxen(qrcode, {
                 borderStyle: 'round',
                 padding: 1,
@@ -166,7 +173,7 @@ export async function main() {
         [options.myRepositories]: async () => {
           const spinner = ora({
             spinner: 'soccerHeader',
-            text: t(Dic.myRepositoriesLoadingText)
+            text: t(Dic.myRepositories.loading.text)
           }).start()
           try {
             const repos = await getRepoList()
@@ -176,9 +183,9 @@ export async function main() {
             while (repoPtr) {
               await prompts(
                 {
-                  type: 'select',
+                  type: 'autocomplete',
                   name: 'url',
-                  message: t(Dic.myRepositoriesPromptsMessage),
+                  message: t(Dic.myRepositories.promptMsg),
                   choices: repos.map((x, idx) => {
                     return {
                       title:
@@ -211,7 +218,7 @@ export async function main() {
               // }
             }
           } catch (error) {
-            console.warn(t(Dic.myRepositoriesLoadingFailMessage))
+            console.warn(t(Dic.myRepositories.loading.failText))
           } finally {
             spinner.stop()
           }
@@ -220,9 +227,9 @@ export async function main() {
           const webSiteUrl = 'https://icebreaker.top'
           const qrcode = await generateQrcode(webSiteUrl)
           const rows = [
-            `\n\n${chalk.bold.greenBright('|')} ${t(Dic.blogWeb)}`,
+            `\n\n${chalk.bold.greenBright('|')} ${t(Dic.blogWeb.title)}`,
             `\n${t(Dic.directAccess)}: ${webSiteUrl}`,
-            `\n${t(Dic.wechatScan)}:\n` +
+            `\n${t(Dic.wechat.scan)}:\n` +
               boxen(qrcode, {
                 borderStyle: 'round',
                 padding: 1,
@@ -233,7 +240,7 @@ export async function main() {
           const { value } = await prompts({
             type: 'toggle',
             name: 'value',
-            message: `${t(Dic.openWithBrower)}`,
+            message: `${t(Dic.openWithBrowser)}`,
             active: 'yes',
             inactive: 'no',
             initial: true
@@ -245,9 +252,9 @@ export async function main() {
         [options.blogMp]: async () => {
           const qrcode = await generateQrcode('https://mp.weixin.qq.com/a/~QCyvHLpi7gWkTTw_D45LNg~~')
           const rows = [
-            `\n\n${chalk.bold.greenBright('|')} ${t(Dic.blogMp)}`,
-            `\n${t(Dic.wechatSearch)}: ${chalk.bold.greenBright('破冰客')}`,
-            `\n${t(Dic.wechatScan)}:\n` +
+            `\n\n${chalk.bold.greenBright('|')} ${t(Dic.blogMp.title)}`,
+            `\n${t(Dic.wechat.search)}: ${chalk.bold.greenBright('破冰客')}`,
+            `\n${t(Dic.wechat.scan)}:\n` +
               boxen(qrcode, {
                 borderStyle: 'round',
                 padding: 1,
@@ -255,6 +262,49 @@ export async function main() {
               })
           ]
           log(rows.join(''))
+        },
+        [options.leaveMsg]: async () => {
+          const formValue = {
+            title: '',
+            body: ''
+          }
+
+          const prompt = new Form({
+            name: 'issue',
+            message: t(Dic.leaveMeMessage.prompt.message),
+            choices: [
+              { name: 'title', message: t(Dic.leaveMeMessage.prompt.choices.title), initial: formValue.title },
+              { name: 'body', message: t(Dic.leaveMeMessage.prompt.choices.body), initial: formValue.body }
+            ],
+
+            validate: (value: typeof formValue) => {
+              if (!value.title) {
+                return t(Dic.leaveMeMessage.prompt.validate.required.title)
+              }
+              if (!value.body) {
+                return t(Dic.leaveMeMessage.prompt.validate.required.body)
+              }
+              return true
+            }
+          })
+          try {
+            const res = await prompt.run()
+            formValue.body = res.body
+            formValue.title = res.title
+            const spinner = ora({
+              spinner: 'soccerHeader',
+              text: t(Dic.leaveMeMessage.prompt.loading.text)
+            }).start()
+            try {
+              await createIssue(formValue)
+              log('\n' + chalk.greenBright(t(Dic.leaveMeMessage.prompt.successMsg)))
+            } catch (error) {
+            } finally {
+              spinner.stop()
+            }
+          } catch (error) {
+            // ctrl+c
+          }
         },
         [options.changeLanguage]: async () => {
           const choices = [
@@ -270,14 +320,14 @@ export async function main() {
           const response = await prompts({
             type: 'select',
             name: 'lang',
-            message: t(Dic.changeLanguageselect),
+            message: t(Dic.changeLanguage.selectMsg),
             choices,
             initial: choices.findIndex((x) => i18next.language.startsWith(x.value))
           })
           await i18next.changeLanguage(response.lang)
         },
         [options.quit]: () => {
-          log(t(Dic.quitsuccessExitString))
+          log(t(Dic.quit.successExitString))
           ptr = 0
         }
         // [options.music]: async () => {
@@ -314,13 +364,13 @@ export async function main() {
             const { value } = await prompts({
               type: 'toggle',
               name: 'value',
-              message: t(Dic.quitprompt) as string,
+              message: t(Dic.quit.promptMsg),
               active: 'yes',
               inactive: 'no',
               initial: false
             })
             if (value) {
-              log(t(Dic.quitsuccessExitString))
+              log(t(Dic.quit.successExitString))
               process.exit()
             }
             return true

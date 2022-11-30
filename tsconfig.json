@@ -37,7 +37,8 @@
   ],
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "noEmitOnError": false
     },
     "require": [
       "tsconfig-paths/register"

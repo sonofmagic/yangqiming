@@ -1,6 +1,8 @@
-# 杨启明的中文简历
+# Resume of yangqiming
 
-This is my chinese resume
+> 杨启明的简历
+
+This is my chinese/english resume
 
 You can run this command:
 
