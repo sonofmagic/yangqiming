@@ -78,7 +78,7 @@ const Dic = {
 
   directAccess: '',
 
-  openWithBrower: '',
+  openWithBrowser: '',
 
   myRepositories: {
     title: '',
@@ -105,11 +105,15 @@ const Dic = {
           body: ''
         }
       },
-      successMsg: ''
+      successMsg: '',
+      loading: {
+        text: '',
+        failText: ''
+      }
     }
   },
   about: 'about'
-} as const
+}
 
 function setDic(dic: typeof Dic) {
   const res = {}
@@ -119,4 +123,4 @@ function setDic(dic: typeof Dic) {
 
 export type IDictionary = typeof Dic
 
-export default setDic(Dic)
+export default <IDictionary>setDic(Dic)
