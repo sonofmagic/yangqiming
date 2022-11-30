@@ -37,7 +37,7 @@ export function isPrimitivesType(value: unknown) {
 
 export function isComplexType(value: unknown) {
   // 不用 instance of 因为原型链
-  return typeof value === 'object' || typeof value === 'function' || Array.isArray(value)
+  return !isPrimitivesType(value) && (typeof value === 'object' || typeof value === 'function' || Array.isArray(value))
 }
 
 export { generateQrcode, emoji, chalk, dayjs, prompts, boxen, axios }
