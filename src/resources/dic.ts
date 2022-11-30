@@ -1,63 +1,126 @@
 // key is the value not the key
-export default {
-  welcome: 'welcome',
-  promptMsg: 'promptMsg',
+import set from 'lodash/set'
+import { isComplexType } from '@/util'
 
-  profile: 'profile',
-  profiledescription: 'profiledescription',
-  profilecontent: 'profilecontent',
-  profileposition: 'profileposition',
-  profilejob: 'profilejob',
-  contact: 'contact',
-  contactdescription: 'contactdescription',
+function combine(k: string, p?: string) {
+  return p ? p + '.' + k : k
+}
 
-  photo: 'photo',
-  photodescription: 'photodescription',
+function setObjPath(dic: Record<string, unknown>, res: Record<string, unknown>, p?: string) {
+  const keys = Reflect.ownKeys(dic).filter((x) => {
+    return typeof x === 'string'
+  }) as string[]
+  for (let i = 0; i < keys.length; i++) {
+    const k = keys[i]
 
-  blogWeb: 'blogWeb',
-  blogWebdescription: 'blogWebdescription',
+    if (isComplexType(dic[k])) {
+      setObjPath(dic[k] as Record<string, unknown>, res, combine(k, p))
+    } else {
+      set(res, combine(k, p), combine(k, p))
+    }
+  }
+}
 
-  blogMp: 'blogMp',
-  blogMpdescription: 'blogMpdescription',
+const Dic = {
+  welcome: '',
+  promptMsg: '',
 
-  music: 'music',
-  musicdescription: 'musicdescription',
+  profile: {
+    title: '',
+    description: '',
+    content: '',
+    position: '',
+    job: ''
+  },
+  contact: {
+    title: '',
+    description: ''
+  },
 
-  quit: 'quit',
-  quitdescription: 'quitdescription',
+  photo: {
+    title: '',
+    description: ''
+  },
 
-  quitprompt: 'quitprompt',
-  quitsuccessExitString: 'quitsuccessExitString',
+  blogWeb: {
+    title: '',
+    description: ''
+  },
 
-  changeLanguage: 'changeLanguage',
-  changeLanguagedescription: 'changeLanguagedescription',
-  changeLanguageselect: 'changeLanguageselect',
+  blogMp: {
+    title: '',
+    description: ''
+  },
 
-  wechatId: 'wechatId',
-  wechatSearch: 'wechatSearch',
-  wechatScan: 'wechatScan',
-  page: 'page',
-  next: 'next',
-  prev: 'prev',
-  exit: 'exit',
+  music: {
+    title: '',
+    description: ''
+  },
 
-  directAccess: 'directAccess',
+  quit: {
+    title: '',
+    description: '',
+    promptMsg: '',
+    successExitString: ''
+  },
 
-  openWithBrower: 'openWithBrowser',
+  changeLanguage: { title: '', description: '', selectMsg: '' },
+  wechat: {
+    id: '',
+    search: '',
+    scan: ''
+  },
 
-  myRepositories: 'myRepositories',
-  myRepositoriesdescription: 'myRepositoriesdescription',
-  myRepositoriesLoadingText: 'myRepositoriesLoadingText',
-  myRepositoriesLoadingFailMessage: 'myRepositoriesLoadingFailMessage',
-  myRepositoriesPromptsMessage: 'myRepositoriesPromptsMessage',
+  page: '',
+  next: '',
+  prev: '',
+  exit: '',
 
-  leaveMeMessage: 'leaveMeMessage',
-  leaveMeMessagedescription: 'leaveMeMessagedescription',
-  leaveMeMessagepromptmessage: 'leaveMeMessagepromptmessage',
-  leaveMeMessagepromptchoicestitlename: 'leaveMeMessagepromptchoicestitlename',
-  leaveMeMessagepromptchoicesbodyname: 'leaveMeMessagepromptchoicesbodyname',
-  leaveMeMessagepromptvalidaterequiredtitle: 'leaveMeMessagepromptvalidaterequiredtitle',
-  leaveMeMessagepromptvalidaterequiredbody: 'leaveMeMessagepromptvalidaterequiredbody',
-  leaveMeMessagepromptsuccessmsg: 'leaveMeMessagepromptsuccessmsg',
+  directAccess: '',
+
+  openWithBrowser: '',
+
+  myRepositories: {
+    title: '',
+    description: '',
+    loading: {
+      text: '',
+      failText: ''
+    },
+    promptMsg: ''
+  },
+
+  leaveMeMessage: {
+    title: '',
+    description: '',
+    prompt: {
+      message: '',
+      choices: {
+        title: '',
+        body: ''
+      },
+      validate: {
+        required: {
+          title: '',
+          body: ''
+        }
+      },
+      successMsg: '',
+      loading: {
+        text: '',
+        failText: ''
+      }
+    }
+  },
   about: 'about'
-} as const
+}
+
+function setDic(dic: typeof Dic) {
+  const res = {}
+  setObjPath(dic, res)
+  return res
+}
+
+export type IDictionary = typeof Dic
+
+export default <IDictionary>setDic(Dic)

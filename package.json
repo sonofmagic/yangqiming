@@ -17,7 +17,8 @@
     "raw:en": "cross-env TRACE=0 LANG=en node bin/yangqiming.js",
     "raw2": "cross-env GITHUB_CI=1 TRACE=0 node ./bin/yangqiming.js",
     "fetch": "ts-node src/repos.ts",
-    "raw:ts": "ts-node src/ts-cli-entry.ts"
+    "raw:ts": "ts-node src/ts-cli-entry.ts",
+    "raw:dic": "ts-node src/resources/dic.ts"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
-import dic from './dic'
+import type { IDictionary } from './dic'
 
-export type ITranslation = Record<typeof dic[keyof typeof dic], string>
+export type ITranslation = IDictionary
 
 export interface IResource {
-  translation: ITranslation
+  translation: IDictionary
 }
