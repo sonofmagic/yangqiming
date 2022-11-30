@@ -4,7 +4,7 @@ const pkgJson = require('../../package.json')
 const pkgName = pkgJson.name
 // const path = require('path')
 
-async function addBin (json, filename) {
+async function addBin(json, filename) {
   json.bin = {
     [pkgName]: filename
   }
@@ -16,21 +16,18 @@ async function addBin (json, filename) {
   return json
 }
 
-async function createBin (pkgName) {
+async function createBin(pkgName) {
   try {
     await fsp.access('bin')
   } catch (error) {
     await fsp.mkdir('bin')
   }
   const filename = `bin/${pkgName}.js`
-  await fsp.writeFile(
-    filename,
-    "#!/usr/bin/env node\nrequire('../dist/cli.js')\n"
-  )
+  await fsp.writeFile(filename, "#!/usr/bin/env node\nrequire('../dist/cli.js')\n")
   return filename
 }
 
-async function createCli () {
+async function createCli() {
   return fsp.writeFile('./src/cli.ts', '// get params from process.argv')
 }
 

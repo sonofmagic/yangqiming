@@ -183,7 +183,7 @@ export async function main() {
             while (repoPtr) {
               await prompts(
                 {
-                  type: 'select',
+                  type: 'autocomplete',
                   name: 'url',
                   message: t(Dic.myRepositories.promptMsg),
                   choices: repos.map((x, idx) => {

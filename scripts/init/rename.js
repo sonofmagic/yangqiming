@@ -8,7 +8,7 @@ const path = require('path')
  * @param {String} ref
  * @param {String} name
  */
-function doReplace (ref, name) {
+function doReplace(ref, name) {
   const paths = ref.split('.')
   const len = paths.length
   switch (len) {
@@ -23,15 +23,15 @@ function doReplace (ref, name) {
   }
 }
 
-function replacePkg (name) {
-  ['name', 'description', 'bugs.url', 'repository.url', 'homepage'].forEach(p => {
+function replacePkg(name) {
+  ;['name', 'description', 'bugs.url', 'repository.url', 'homepage'].forEach((p) => {
     doReplace(p, name)
     console.log(`[${p}] replace over`)
   })
   return pkg
 }
 
-; (async () => {
+;(async () => {
   const cwd = process.cwd()
   const dirname = path.basename(cwd)
   const pkg = replacePkg(dirname)
