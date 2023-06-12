@@ -19,7 +19,8 @@
     "fetch": "ts-node src/repos.ts",
     "raw:ts": "ts-node src/ts-cli-entry.ts",
     "raw:dic": "ts-node src/resources/dic.ts",
-    "release": "bumpp"
+    "release": "bumpp",
+    "sync": "cnpm sync sonofmagic yangqiming"
   },
   "repository": {
     "type": "git",
