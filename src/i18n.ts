@@ -7,18 +7,24 @@ export async function init() {
   const lng = locale.startsWith('zh') ? 'zh' : 'en'
   return await i18next.init({
     lng,
+    returnNull: false,
     // debug: true,
     resources
   })
 }
-type tParameters = Parameters<typeof i18next.t>
 
-export function t(
-  key: tParameters[0],
-  options?: tParameters[2] & Record<string, unknown>,
-  defaultValue?: tParameters[1]
-) {
-  return i18next.t(key, defaultValue, options)
-}
+export const t = i18next.t
+// type tParameters = Parameters<typeof i18next.t>
+
+// export function t(
+//   key: tParameters[0],
+//   options?: tParameters[1],
+// ) {
+//   if (options === undefined) {
+//     return i18next.t(key)
+//   }
+//   return i18next.t(key, options)
+
+// }
 
 export { i18next, Dic }

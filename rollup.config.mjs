@@ -6,7 +6,7 @@ import json from '@rollup/plugin-json'
 import builtinModules from 'builtin-modules'
 import { visualizer } from 'rollup-plugin-visualizer'
 import replace from '@rollup/plugin-replace'
-import { terser } from 'rollup-plugin-terser'
+import terser from '@rollup/plugin-terser'
 const pkg = JSON.parse(
   readFileSync('./package.json', {
     encoding: 'utf8'
@@ -58,9 +58,9 @@ const config = {
     typescript({ tsconfig: './tsconfig.build.json', sourceMap: isDev }),
     isProd
       ? visualizer({
-          // emitFile: true,
-          filename: `stats/stats.html`
-        })
+        // emitFile: true,
+        filename: `stats/stats.html`
+      })
       : undefined
   ],
   external: [...(pkg.dependencies ? Object.keys(pkg.dependencies) : []), ...builtinModules]

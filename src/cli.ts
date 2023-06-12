@@ -71,11 +71,11 @@ export async function main() {
           value: options.blogMp,
           description: t(Dic.blogMp.description)
         },
-        {
-          title: t(Dic.leaveMeMessage.title),
-          value: options.leaveMsg,
-          description: t(Dic.leaveMeMessage.description)
-        },
+        // {
+        //   title: t(Dic.leaveMeMessage.title),
+        //   value: options.leaveMsg,
+        //   description: t(Dic.leaveMeMessage.description)
+        // },
         {
           title: t(Dic.changeLanguage.title),
           value: options.changeLanguage,
