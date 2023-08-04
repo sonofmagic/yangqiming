@@ -13,7 +13,7 @@ export const translation: ITranslation = {
         dayjs().year() - whenToStartWork.year()
       )} years of experience | ${emoji.get('mortar_board')} Yangzhou University - Software Engineering - Bachelor`,
       `\n\n${chalk.bold.greenBright('|')} Personal Strengths`,
-      '\nAlways reliable. Kind of into technology',
+      '\nAlways reliable. Love technology',
       `\n\n${chalk.bold.greenBright('|')} Personal Skills`,
       '\nGood basic skills',
       `\n\n${chalk.bold.greenBright('|')} Desired Position`,
@@ -29,8 +29,8 @@ export const translation: ITranslation = {
     ].join(''),
     description: `Display personal information of {{nickname}}`,
     title: 'Personal information',
-    job: 'As a full-stack development engineer',
-    position: 'Entrepreneur/Core Development'
+    job: 'As a Full-Stack Developer',
+    position: 'Entrepreneur / Core Developer'
   },
   contact: {
     title: 'Contact information',

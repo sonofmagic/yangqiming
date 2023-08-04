@@ -15,9 +15,9 @@ export const translation: ITranslation = {
         dayjs().year() - whenToStartWork.year()
       )} 年经验 | ${emoji.get('mortar_board')} 扬州大学-软件工程-本科`,
       `\n\n${chalk.bold.greenBright('|')} 个人优势`,
-      '\n总是很靠谱，对技术还算热爱',
+      '\n靠谱，对技术还算热爱',
       `\n\n${chalk.bold.greenBright('|')} 个人技能`,
-      '\n基本功好都能写',
+      '\n基本功好想到什么写什么',
       `\n\n${chalk.bold.greenBright('|')} 期望职位`,
       `\n${emoji.get('art')} 钱多 | ${emoji.get('moneybag')} 事少 | ${emoji.get('point_right')} 离家近 ${emoji.get(
         'laughing'
