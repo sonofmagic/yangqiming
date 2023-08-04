@@ -95,8 +95,8 @@ devDependencies:
     specifier: 8.46.0
     version: registry.npmmirror.com/eslint@8.46.0
   i18next:
-    specifier: ^22.5.1
-    version: registry.npmmirror.com/i18next@22.5.1
+    specifier: ^23.4.1
+    version: registry.npmmirror.com/i18next@23.4.1
   jest:
     specifier: ^29.6.2
     version: registry.npmmirror.com/jest@29.6.2(@types/node@20.4.7)(ts-node@10.9.1)
@@ -544,10 +544,10 @@ packages:
       '@babel/helper-plugin-utils': registry.npmmirror.com/@babel/helper-plugin-utils@7.22.5
     dev: true
 
-  registry.npmmirror.com/@babel/runtime@7.22.5:
-    resolution: {integrity: sha512-ecjvYlnAaZ/KVneE/OdKYBYfgXV3Ptu6zQWmgEF7vwKhQnvVS6bjMD2XYgj+SNvQ1GfK/pjgokfPkC/2CO8CuA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@babel/runtime/-/runtime-7.22.5.tgz}
+  registry.npmmirror.com/@babel/runtime@7.22.6:
+    resolution: {integrity: sha512-wDb5pWm4WDdF6LFUde3Jl8WzPA+3ZbxYqkC6xAXuD3irdEHN1k0NfTRrJD8ZD378SJ61miMLCqIOXYhd8x+AJQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@babel/runtime/-/runtime-7.22.6.tgz}
     name: '@babel/runtime'
-    version: 7.22.5
+    version: 7.22.6
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: registry.npmmirror.com/regenerator-runtime@0.13.11
@@ -3864,12 +3864,12 @@ packages:
     engines: {node: '>=14.18.0'}
     dev: true
 
-  registry.npmmirror.com/i18next@22.5.1:
-    resolution: {integrity: sha512-8TGPgM3pAD+VRsMtUMNknRz3kzqwp/gPALrWMsDnmC1mKqJwpWyooQRLMcbTwq8z8YwSmuj+ZYvc+xCuEpkssA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/i18next/-/i18next-22.5.1.tgz}
+  registry.npmmirror.com/i18next@23.4.1:
+    resolution: {integrity: sha512-07ekE7hbUrbxTYj97VnBzyhKcGURTJC9p4iWTwCVC8t63T+YrgqQmb/n1LBQMivZYwR61pqS+PC0G2rtENycyQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/i18next/-/i18next-23.4.1.tgz}
     name: i18next
-    version: 22.5.1
+    version: 23.4.1
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.22.5
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.22.6
     dev: true
 
   registry.npmmirror.com/ieee754@1.2.1:

@@ -107,7 +107,11 @@ export const translation: ITranslation = {
       }
     }
   },
-  about: '关于'
+  about: '关于',
+  cardMp: {
+    description: 'github card in weapp',
+    title: '名片小程序'
+  }
 }
 
 export default {

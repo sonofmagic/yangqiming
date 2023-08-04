@@ -71,6 +71,11 @@ export async function main() {
           value: options.blogMp,
           description: t(Dic.blogMp.description)
         },
+        {
+          title: t(Dic.cardMp.title),
+          value: options.cardMp,
+          description: t(Dic.cardMp.description)
+        },
         // {
         //   title: t(Dic.leaveMeMessage.title),
         //   value: options.leaveMsg,
@@ -117,11 +122,11 @@ export async function main() {
             `\n\n${chalk.bold.greenBright('|')} ${t(Dic.contact.title)}`,
             '\nGithub: sonofmagic',
             `\n${t(Dic.wechat.id)}:\n` +
-              boxen(qrcode, {
-                borderStyle: 'round',
-                padding: 1,
-                margin: 1
-              })
+            boxen(qrcode, {
+              borderStyle: 'round',
+              padding: 1,
+              margin: 1
+            })
           ]
           log(rows.join(''))
         },
@@ -190,8 +195,7 @@ export async function main() {
                     return {
                       title:
                         x.name +
-                        ` (${isUnicodeSupported ? emoji.get('star') : 'star'}:${x.stargazers_count} ${
-                          isUnicodeSupported ? emoji.get('fork_and_knife') : 'fork'
+                        ` (${isUnicodeSupported ? emoji.get('star') : 'star'}:${x.stargazers_count} ${isUnicodeSupported ? emoji.get('fork_and_knife') : 'fork'
                         }:${x.forks_count})`,
                       description: x.description,
                       value: {
@@ -230,11 +234,11 @@ export async function main() {
             `\n\n${chalk.bold.greenBright('|')} ${t(Dic.blogWeb.title)}`,
             `\n${t(Dic.directAccess)}: ${webSiteUrl}`,
             `\n${t(Dic.wechat.scan)}:\n` +
-              boxen(qrcode, {
-                borderStyle: 'round',
-                padding: 1,
-                margin: 1
-              })
+            boxen(qrcode, {
+              borderStyle: 'round',
+              padding: 1,
+              margin: 1
+            })
           ]
           log(rows.join(''))
           const { value } = await prompts({
@@ -255,11 +259,26 @@ export async function main() {
             `\n\n${chalk.bold.greenBright('|')} ${t(Dic.blogMp.title)}`,
             `\n${t(Dic.wechat.search)}: ${chalk.bold.greenBright('破冰客')}`,
             `\n${t(Dic.wechat.scan)}:\n` +
-              boxen(qrcode, {
-                borderStyle: 'round',
-                padding: 1,
-                margin: 1
-              })
+            boxen(qrcode, {
+              borderStyle: 'round',
+              padding: 1,
+              margin: 1
+            })
+          ]
+          log(rows.join(''))
+        },
+        [options.cardMp]: async () => {
+          const qrcode = await generateQrcode('https://mp.weixin.qq.com/a/~wCmPXG4P6LVtnyOobH53KQ~~')
+          const rows = [
+            `\n\n${chalk.bold.greenBright('|')} ${t(Dic.cardMp.title)}`,
+            `\n${t(Dic.wechat.search)}: ${chalk.bold.greenBright('程序员名片')}`,
+            `\n${t(Dic.wechat.scan)}:\n` +
+            boxen(qrcode, {
+              borderStyle: 'round',
+              padding: 1,
+              margin: 1
+            }),
+            `\nMy Card Short Link: ` + chalk.bold.greenBright('#小程序://程序员名片/CJpMeOanmyzNyBJ')
           ]
           log(rows.join(''))
         },

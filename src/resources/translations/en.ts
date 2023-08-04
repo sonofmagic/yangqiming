@@ -108,7 +108,11 @@ export const translation: ITranslation = {
       successMsg: 'Leave a message successfully!'
     }
   },
-  about: 'about'
+  about: 'about',
+  cardMp: {
+    description: 'github card in weapp',
+    title: 'My Github Card'
+  }
 }
 
 export default {
