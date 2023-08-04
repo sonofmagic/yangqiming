@@ -4,36 +4,31 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  open:
-    specifier: ^8.4.0
-    version: registry.npmmirror.com/open@8.4.0
-
 devDependencies:
   '@icebreakers/eslint-config-ts':
     specifier: ^1.2.2
-    version: registry.npmmirror.com/@icebreakers/eslint-config-ts@1.2.2(eslint@8.46.0)(jest@29.6.2)(prettier@2.8.8)(typescript@5.1.6)
+    version: registry.npmmirror.com/@icebreakers/eslint-config-ts@1.2.2(eslint@8.46.0)(jest@29.6.2)(prettier@3.0.1)(typescript@5.1.6)
   '@rollup/plugin-alias':
     specifier: ^5.0.0
-    version: registry.npmmirror.com/@rollup/plugin-alias@5.0.0(rollup@3.27.1)
+    version: registry.npmmirror.com/@rollup/plugin-alias@5.0.0(rollup@3.27.2)
   '@rollup/plugin-commonjs':
     specifier: ^25.0.3
-    version: registry.npmmirror.com/@rollup/plugin-commonjs@25.0.3(rollup@3.27.1)
+    version: registry.npmmirror.com/@rollup/plugin-commonjs@25.0.3(rollup@3.27.2)
   '@rollup/plugin-json':
     specifier: ^6.0.0
-    version: registry.npmmirror.com/@rollup/plugin-json@6.0.0(rollup@3.27.1)
+    version: registry.npmmirror.com/@rollup/plugin-json@6.0.0(rollup@3.27.2)
   '@rollup/plugin-node-resolve':
     specifier: ^15.1.0
-    version: registry.npmmirror.com/@rollup/plugin-node-resolve@15.1.0(rollup@3.27.1)
+    version: registry.npmmirror.com/@rollup/plugin-node-resolve@15.1.0(rollup@3.27.2)
   '@rollup/plugin-replace':
     specifier: ^5.0.2
-    version: registry.npmmirror.com/@rollup/plugin-replace@5.0.2(rollup@3.27.1)
+    version: registry.npmmirror.com/@rollup/plugin-replace@5.0.2(rollup@3.27.2)
   '@rollup/plugin-terser':
     specifier: ^0.4.3
-    version: registry.npmmirror.com/@rollup/plugin-terser@0.4.3(rollup@3.27.1)
+    version: registry.npmmirror.com/@rollup/plugin-terser@0.4.3(rollup@3.27.2)
   '@rollup/plugin-typescript':
     specifier: ^11.1.2
-    version: registry.npmmirror.com/@rollup/plugin-typescript@11.1.2(rollup@3.27.1)(tslib@2.6.1)(typescript@5.1.6)
+    version: registry.npmmirror.com/@rollup/plugin-typescript@11.1.2(rollup@3.27.2)(tslib@2.6.1)(typescript@5.1.6)
   '@tsconfig/recommended':
     specifier: ^1.0.2
     version: registry.npmmirror.com/@tsconfig/recommended@1.0.2
@@ -119,8 +114,8 @@ devDependencies:
     specifier: ^1.1.5
     version: registry.npmmirror.com/play-sound@1.1.5
   prettier:
-    specifier: ^2.8.8
-    version: registry.npmmirror.com/prettier@2.8.8
+    specifier: ^3.0.1
+    version: registry.npmmirror.com/prettier@3.0.1
   prompts:
     specifier: ^2.4.2
     version: registry.npmmirror.com/prompts@2.4.2
@@ -128,11 +123,11 @@ devDependencies:
     specifier: ^1.5.3
     version: registry.npmmirror.com/qrcode@1.5.3
   rollup:
-    specifier: ^3.27.1
-    version: registry.npmmirror.com/rollup@3.27.1
+    specifier: ^3.27.2
+    version: registry.npmmirror.com/rollup@3.27.2
   rollup-plugin-visualizer:
     specifier: ^5.9.2
-    version: registry.npmmirror.com/rollup-plugin-visualizer@5.9.2(rollup@3.27.1)
+    version: registry.npmmirror.com/rollup-plugin-visualizer@5.9.2(rollup@3.27.2)
   ts-jest:
     specifier: ^29.1.1
     version: registry.npmmirror.com/ts-jest@29.1.1(@babel/core@7.22.9)(jest@29.6.2)(typescript@5.1.6)
@@ -682,7 +677,7 @@ packages:
     version: 1.2.1
     dev: true
 
-  registry.npmmirror.com/@icebreakers/eslint-config-basic@1.2.2(@typescript-eslint/eslint-plugin@6.2.1)(@typescript-eslint/parser@6.2.1)(eslint@8.46.0)(jest@29.6.2)(prettier@2.8.8)(typescript@5.1.6):
+  registry.npmmirror.com/@icebreakers/eslint-config-basic@1.2.2(@typescript-eslint/eslint-plugin@6.2.1)(@typescript-eslint/parser@6.2.1)(eslint@8.46.0)(jest@29.6.2)(prettier@3.0.1)(typescript@5.1.6):
     resolution: {integrity: sha512-wSPKCdJEgcT0pXtoJ1T0T3cQabwp4/1iYENX7yMcOEa8bW4rd5F9tH9m45OGCtRpsUfKZL/u3ykP5OOVTPIK7A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@icebreakers/eslint-config-basic/-/eslint-config-basic-1.2.2.tgz}
     id: registry.npmmirror.com/@icebreakers/eslint-config-basic/1.2.2
     name: '@icebreakers/eslint-config-basic'
@@ -693,7 +688,7 @@ packages:
       eslint-plugin-import: registry.npmmirror.com/eslint-plugin-import@2.27.5(@typescript-eslint/parser@6.2.1)(eslint@8.46.0)
       eslint-plugin-jest: registry.npmmirror.com/eslint-plugin-jest@27.2.3(@typescript-eslint/eslint-plugin@6.2.1)(eslint@8.46.0)(jest@29.6.2)(typescript@5.1.6)
       eslint-plugin-n: registry.npmmirror.com/eslint-plugin-n@16.0.1(eslint@8.46.0)
-      eslint-plugin-prettier: registry.npmmirror.com/eslint-plugin-prettier@5.0.0(eslint-config-prettier@8.10.0)(eslint@8.46.0)(prettier@2.8.8)
+      eslint-plugin-prettier: registry.npmmirror.com/eslint-plugin-prettier@5.0.0(eslint-config-prettier@8.10.0)(eslint@8.46.0)(prettier@3.0.1)
       eslint-plugin-promise: registry.npmmirror.com/eslint-plugin-promise@6.1.1(eslint@8.46.0)
     transitivePeerDependencies:
       - '@types/eslint'
@@ -708,13 +703,13 @@ packages:
       - typescript
     dev: true
 
-  registry.npmmirror.com/@icebreakers/eslint-config-ts@1.2.2(eslint@8.46.0)(jest@29.6.2)(prettier@2.8.8)(typescript@5.1.6):
+  registry.npmmirror.com/@icebreakers/eslint-config-ts@1.2.2(eslint@8.46.0)(jest@29.6.2)(prettier@3.0.1)(typescript@5.1.6):
     resolution: {integrity: sha512-oBkEKLYIGRhm6TYbc4LAgpau02FHFBiqhHN4HasqFYjxuF3OHSOtPEyoVPOLZe2oxJvnLlvnlXsFsa/XIQMjQA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@icebreakers/eslint-config-ts/-/eslint-config-ts-1.2.2.tgz}
     id: registry.npmmirror.com/@icebreakers/eslint-config-ts/1.2.2
     name: '@icebreakers/eslint-config-ts'
     version: 1.2.2
     dependencies:
-      '@icebreakers/eslint-config-basic': registry.npmmirror.com/@icebreakers/eslint-config-basic@1.2.2(@typescript-eslint/eslint-plugin@6.2.1)(@typescript-eslint/parser@6.2.1)(eslint@8.46.0)(jest@29.6.2)(prettier@2.8.8)(typescript@5.1.6)
+      '@icebreakers/eslint-config-basic': registry.npmmirror.com/@icebreakers/eslint-config-basic@1.2.2(@typescript-eslint/eslint-plugin@6.2.1)(@typescript-eslint/parser@6.2.1)(eslint@8.46.0)(jest@29.6.2)(prettier@3.0.1)(typescript@5.1.6)
       '@types/jest': registry.npmmirror.com/@types/jest@29.5.3
       '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin@6.2.1(@typescript-eslint/parser@6.2.1)(eslint@8.46.0)(typescript@5.1.6)
       '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser@6.2.1(eslint@8.46.0)(typescript@5.1.6)
@@ -1129,7 +1124,7 @@ packages:
       tslib: registry.npmmirror.com/tslib@2.6.1
     dev: true
 
-  registry.npmmirror.com/@rollup/plugin-alias@5.0.0(rollup@3.27.1):
+  registry.npmmirror.com/@rollup/plugin-alias@5.0.0(rollup@3.27.2):
     resolution: {integrity: sha512-l9hY5chSCjuFRPsnRm16twWBiSApl2uYFLsepQYwtBuAxNMQ/1dJqADld40P0Jkqm65GRTLy/AC6hnpVebtLsA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/plugin-alias/-/plugin-alias-5.0.0.tgz}
     id: registry.npmmirror.com/@rollup/plugin-alias/5.0.0
     name: '@rollup/plugin-alias'
@@ -1141,11 +1136,11 @@ packages:
       rollup:
         optional: true
     dependencies:
-      rollup: registry.npmmirror.com/rollup@3.27.1
+      rollup: registry.npmmirror.com/rollup@3.27.2
       slash: registry.npmmirror.com/slash@4.0.0
     dev: true
 
-  registry.npmmirror.com/@rollup/plugin-commonjs@25.0.3(rollup@3.27.1):
+  registry.npmmirror.com/@rollup/plugin-commonjs@25.0.3(rollup@3.27.2):
     resolution: {integrity: sha512-uBdtWr/H3BVcgm97MUdq2oJmqBR23ny1hOrWe2PKo9FTbjsGqg32jfasJUKYAI5ouqacjRnj65mBB/S79F+GQA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/plugin-commonjs/-/plugin-commonjs-25.0.3.tgz}
     id: registry.npmmirror.com/@rollup/plugin-commonjs/25.0.3
     name: '@rollup/plugin-commonjs'
@@ -1157,16 +1152,16 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils@5.0.2(rollup@3.27.1)
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils@5.0.2(rollup@3.27.2)
       commondir: registry.npmmirror.com/commondir@1.0.1
       estree-walker: registry.npmmirror.com/estree-walker@2.0.2
       glob: registry.npmmirror.com/glob@8.1.0
       is-reference: registry.npmmirror.com/is-reference@1.2.1
       magic-string: registry.npmmirror.com/magic-string@0.27.0
-      rollup: registry.npmmirror.com/rollup@3.27.1
+      rollup: registry.npmmirror.com/rollup@3.27.2
     dev: true
 
-  registry.npmmirror.com/@rollup/plugin-json@6.0.0(rollup@3.27.1):
+  registry.npmmirror.com/@rollup/plugin-json@6.0.0(rollup@3.27.2):
     resolution: {integrity: sha512-i/4C5Jrdr1XUarRhVu27EEwjt4GObltD7c+MkCIpO2QIbojw8MUs+CCTqOphQi3Qtg1FLmYt+l+6YeoIf51J7w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/plugin-json/-/plugin-json-6.0.0.tgz}
     id: registry.npmmirror.com/@rollup/plugin-json/6.0.0
     name: '@rollup/plugin-json'
@@ -1178,11 +1173,11 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils@5.0.2(rollup@3.27.1)
-      rollup: registry.npmmirror.com/rollup@3.27.1
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils@5.0.2(rollup@3.27.2)
+      rollup: registry.npmmirror.com/rollup@3.27.2
     dev: true
 
-  registry.npmmirror.com/@rollup/plugin-node-resolve@15.1.0(rollup@3.27.1):
+  registry.npmmirror.com/@rollup/plugin-node-resolve@15.1.0(rollup@3.27.2):
     resolution: {integrity: sha512-xeZHCgsiZ9pzYVgAo9580eCGqwh/XCEUM9q6iQfGNocjgkufHAqC3exA+45URvhiYV8sBF9RlBai650eNs7AsA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-15.1.0.tgz}
     id: registry.npmmirror.com/@rollup/plugin-node-resolve/15.1.0
     name: '@rollup/plugin-node-resolve'
@@ -1194,16 +1189,16 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils@5.0.2(rollup@3.27.1)
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils@5.0.2(rollup@3.27.2)
       '@types/resolve': registry.npmmirror.com/@types/resolve@1.20.2
       deepmerge: registry.npmmirror.com/deepmerge@4.3.1
       is-builtin-module: registry.npmmirror.com/is-builtin-module@3.2.1
       is-module: registry.npmmirror.com/is-module@1.0.0
       resolve: registry.npmmirror.com/resolve@1.22.2
-      rollup: registry.npmmirror.com/rollup@3.27.1
+      rollup: registry.npmmirror.com/rollup@3.27.2
     dev: true
 
-  registry.npmmirror.com/@rollup/plugin-replace@5.0.2(rollup@3.27.1):
+  registry.npmmirror.com/@rollup/plugin-replace@5.0.2(rollup@3.27.2):
     resolution: {integrity: sha512-M9YXNekv/C/iHHK+cvORzfRYfPbq0RDD8r0G+bMiTXjNGKulPnCT9O3Ss46WfhI6ZOCgApOP7xAdmCQJ+U2LAA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/plugin-replace/-/plugin-replace-5.0.2.tgz}
     id: registry.npmmirror.com/@rollup/plugin-replace/5.0.2
     name: '@rollup/plugin-replace'
@@ -1215,12 +1210,12 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils@5.0.2(rollup@3.27.1)
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils@5.0.2(rollup@3.27.2)
       magic-string: registry.npmmirror.com/magic-string@0.27.0
-      rollup: registry.npmmirror.com/rollup@3.27.1
+      rollup: registry.npmmirror.com/rollup@3.27.2
     dev: true
 
-  registry.npmmirror.com/@rollup/plugin-terser@0.4.3(rollup@3.27.1):
+  registry.npmmirror.com/@rollup/plugin-terser@0.4.3(rollup@3.27.2):
     resolution: {integrity: sha512-EF0oejTMtkyhrkwCdg0HJ0IpkcaVg1MMSf2olHb2Jp+1mnLM04OhjpJWGma4HobiDTF0WCyViWuvadyE9ch2XA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/plugin-terser/-/plugin-terser-0.4.3.tgz}
     id: registry.npmmirror.com/@rollup/plugin-terser/0.4.3
     name: '@rollup/plugin-terser'
@@ -1232,13 +1227,13 @@ packages:
       rollup:
         optional: true
     dependencies:
-      rollup: registry.npmmirror.com/rollup@3.27.1
+      rollup: registry.npmmirror.com/rollup@3.27.2
       serialize-javascript: registry.npmmirror.com/serialize-javascript@6.0.1
       smob: registry.npmmirror.com/smob@1.4.0
       terser: registry.npmmirror.com/terser@5.17.7
     dev: true
 
-  registry.npmmirror.com/@rollup/plugin-typescript@11.1.2(rollup@3.27.1)(tslib@2.6.1)(typescript@5.1.6):
+  registry.npmmirror.com/@rollup/plugin-typescript@11.1.2(rollup@3.27.2)(tslib@2.6.1)(typescript@5.1.6):
     resolution: {integrity: sha512-0ghSOCMcA7fl1JM+0gYRf+Q/HWyg+zg7/gDSc+fRLmlJWcW5K1I+CLRzaRhXf4Y3DRyPnnDo4M2ktw+a6JcDEg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/plugin-typescript/-/plugin-typescript-11.1.2.tgz}
     id: registry.npmmirror.com/@rollup/plugin-typescript/11.1.2
     name: '@rollup/plugin-typescript'
@@ -1254,14 +1249,14 @@ packages:
       tslib:
         optional: true
     dependencies:
-      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils@5.0.2(rollup@3.27.1)
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils@5.0.2(rollup@3.27.2)
       resolve: registry.npmmirror.com/resolve@1.22.2
-      rollup: registry.npmmirror.com/rollup@3.27.1
+      rollup: registry.npmmirror.com/rollup@3.27.2
       tslib: registry.npmmirror.com/tslib@2.6.1
       typescript: registry.npmmirror.com/typescript@5.1.6
     dev: true
 
-  registry.npmmirror.com/@rollup/pluginutils@5.0.2(rollup@3.27.1):
+  registry.npmmirror.com/@rollup/pluginutils@5.0.2(rollup@3.27.2):
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/pluginutils/-/pluginutils-5.0.2.tgz}
     id: registry.npmmirror.com/@rollup/pluginutils/5.0.2
     name: '@rollup/pluginutils'
@@ -1276,7 +1271,7 @@ packages:
       '@types/estree': registry.npmmirror.com/@types/estree@1.0.1
       estree-walker: registry.npmmirror.com/estree-walker@2.0.2
       picomatch: registry.npmmirror.com/picomatch@2.3.1
-      rollup: registry.npmmirror.com/rollup@3.27.1
+      rollup: registry.npmmirror.com/rollup@3.27.2
     dev: true
 
   registry.npmmirror.com/@sinclair/typebox@0.27.8:
@@ -2662,6 +2657,7 @@ packages:
     name: define-lazy-prop
     version: 2.0.0
     engines: {node: '>=8'}
+    dev: true
 
   registry.npmmirror.com/define-lazy-prop@3.0.0:
     resolution: {integrity: sha512-N+MeXYoqr3pOgn8xfyRPREN7gHakLYjhsHhWGT3fWAiL4IkAt0iDw14QiiEm2bE30c5XX5q0FtAA3CK5f9/BUg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/define-lazy-prop/-/define-lazy-prop-3.0.0.tgz}
@@ -3114,7 +3110,7 @@ packages:
       semver: registry.npmmirror.com/semver@7.5.4
     dev: true
 
-  registry.npmmirror.com/eslint-plugin-prettier@5.0.0(eslint-config-prettier@8.10.0)(eslint@8.46.0)(prettier@2.8.8):
+  registry.npmmirror.com/eslint-plugin-prettier@5.0.0(eslint-config-prettier@8.10.0)(eslint@8.46.0)(prettier@3.0.1):
     resolution: {integrity: sha512-AgaZCVuYDXHUGxj/ZGu1u8H8CYgDY3iG6w5kUFw4AzMVXzB7VvbKgYR4nATIN+OvUrghMbiDLeimVjVY5ilq3w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/eslint-plugin-prettier/-/eslint-plugin-prettier-5.0.0.tgz}
     id: registry.npmmirror.com/eslint-plugin-prettier/5.0.0
     name: eslint-plugin-prettier
@@ -3133,7 +3129,7 @@ packages:
     dependencies:
       eslint: registry.npmmirror.com/eslint@8.46.0
       eslint-config-prettier: registry.npmmirror.com/eslint-config-prettier@8.10.0(eslint@8.46.0)
-      prettier: registry.npmmirror.com/prettier@2.8.8
+      prettier: registry.npmmirror.com/prettier@3.0.1
       prettier-linter-helpers: registry.npmmirror.com/prettier-linter-helpers@1.0.0
       synckit: registry.npmmirror.com/synckit@0.8.5
     dev: true
@@ -4035,6 +4031,7 @@ packages:
     version: 2.2.1
     engines: {node: '>=8'}
     hasBin: true
+    dev: true
 
   registry.npmmirror.com/is-docker@3.0.0:
     resolution: {integrity: sha512-eljcgEDlEns/7AXFosB5K/2nCM4P7FQPkGc/DWLy5rmFEWvZayGrik1d9/QIY5nJ4f9YsVvBkA6kJpHn9rISdQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-docker/-/is-docker-3.0.0.tgz}
@@ -4230,6 +4227,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       is-docker: registry.npmmirror.com/is-docker@2.2.1
+    dev: true
 
   registry.npmmirror.com/isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/isarray/-/isarray-2.0.5.tgz}
@@ -5291,6 +5289,7 @@ packages:
       define-lazy-prop: registry.npmmirror.com/define-lazy-prop@2.0.0
       is-docker: registry.npmmirror.com/is-docker@2.2.1
       is-wsl: registry.npmmirror.com/is-wsl@2.2.0
+    dev: true
 
   registry.npmmirror.com/open@9.1.0:
     resolution: {integrity: sha512-OS+QTnw1/4vrf+9hh1jc1jnYjzSG4ttTBB8UxOwAnInG3Uo4ssetzC1ihqaIHjLJnA5GGlRl6QlZXOTQhRBUvg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/open/-/open-9.1.0.tgz}
@@ -5556,11 +5555,11 @@ packages:
       fast-diff: registry.npmmirror.com/fast-diff@1.3.0
     dev: true
 
-  registry.npmmirror.com/prettier@2.8.8:
-    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/prettier/-/prettier-2.8.8.tgz}
+  registry.npmmirror.com/prettier@3.0.1:
+    resolution: {integrity: sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/prettier/-/prettier-3.0.1.tgz}
     name: prettier
-    version: 2.8.8
-    engines: {node: '>=10.13.0'}
+    version: 3.0.1
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
@@ -5773,7 +5772,7 @@ packages:
       glob: registry.npmmirror.com/glob@7.2.3
     dev: true
 
-  registry.npmmirror.com/rollup-plugin-visualizer@5.9.2(rollup@3.27.1):
+  registry.npmmirror.com/rollup-plugin-visualizer@5.9.2(rollup@3.27.2):
     resolution: {integrity: sha512-waHktD5mlWrYFrhOLbti4YgQCn1uR24nYsNuXxg7LkPH8KdTXVWR9DNY1WU0QqokyMixVXJS4J04HNrVTMP01A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rollup-plugin-visualizer/-/rollup-plugin-visualizer-5.9.2.tgz}
     id: registry.npmmirror.com/rollup-plugin-visualizer/5.9.2
     name: rollup-plugin-visualizer
@@ -5788,15 +5787,15 @@ packages:
     dependencies:
       open: registry.npmmirror.com/open@8.4.0
       picomatch: registry.npmmirror.com/picomatch@2.3.1
-      rollup: registry.npmmirror.com/rollup@3.27.1
+      rollup: registry.npmmirror.com/rollup@3.27.2
       source-map: registry.npmmirror.com/source-map@0.7.4
       yargs: registry.npmmirror.com/yargs@17.7.2
     dev: true
 
-  registry.npmmirror.com/rollup@3.27.1:
-    resolution: {integrity: sha512-tXNDFwOkN6C2w5Blj1g6ForKeFw6c1mDu5jxoeDO3/pmYjgt+8yvIFjKzH5FQUq70OKZBkOt0zzv0THXL7vwzQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rollup/-/rollup-3.27.1.tgz}
+  registry.npmmirror.com/rollup@3.27.2:
+    resolution: {integrity: sha512-YGwmHf7h2oUHkVBT248x0yt6vZkYQ3/rvE5iQuVBh3WO8GcJ6BNeOkpoX1yMHIiBm18EMLjBPIoUDkhgnyxGOQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rollup/-/rollup-3.27.2.tgz}
     name: rollup
-    version: 3.27.1
+    version: 3.27.2
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:

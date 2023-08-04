@@ -7,16 +7,12 @@ export function createProjectsTree() {
   tree.add(
     new AsciiTree(
       t(Dic.profile.job),
-      new AsciiTree('Vue'),
-      new AsciiTree('React'),
-      new AsciiTree('Serverless'),
-      new AsciiTree('Nodejs'),
-      new AsciiTree('Nestjs'),
-      new AsciiTree('Nuxtjs'),
-      new AsciiTree('Nestjs'),
-      new AsciiTree('Umi'),
-      new AsciiTree('uniapp'),
-      new AsciiTree('weapp')
+
+      new AsciiTree('React / Nextjs / Umi'),
+      new AsciiTree('Vue / Nuxtjs'),
+      new AsciiTree('Nestjs / Express / Koa'),
+      new AsciiTree('Nodejs / Serverless'),
+      new AsciiTree('Uni-app / Tarojs / Weapp')
     )
   )
 

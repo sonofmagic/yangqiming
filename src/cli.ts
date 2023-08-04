@@ -94,7 +94,7 @@ export async function main() {
         // },
         { title: t(Dic.quit.title), value: options.quit, description: t(Dic.quit.description) }
       ]
-      const idxMap = choices.reduce<Record<typeof choices[number]['value'], number>>((acc, cur, idx) => {
+      const idxMap = choices.reduce<Record<(typeof choices)[number]['value'], number>>((acc, cur, idx) => {
         acc[cur.value] = idx
         return acc
       }, {})
@@ -122,11 +122,11 @@ export async function main() {
             `\n\n${chalk.bold.greenBright('|')} ${t(Dic.contact.title)}`,
             '\nGithub: sonofmagic',
             `\n${t(Dic.wechat.id)}:\n` +
-            boxen(qrcode, {
-              borderStyle: 'round',
-              padding: 1,
-              margin: 1
-            })
+              boxen(qrcode, {
+                borderStyle: 'round',
+                padding: 1,
+                margin: 1
+              })
           ]
           log(rows.join(''))
         },
@@ -135,6 +135,7 @@ export async function main() {
             const total = 6
             let idx = 0
             const showPhoto = (idx = 0) => {
+              // process.stdout.clearLine(1)
               const photo = fs.readFileSync(path.resolve(__dirname, `../assets/photos/${idx}.txt`), {
                 encoding: 'utf-8'
               })
@@ -195,7 +196,8 @@ export async function main() {
                     return {
                       title:
                         x.name +
-                        ` (${isUnicodeSupported ? emoji.get('star') : 'star'}:${x.stargazers_count} ${isUnicodeSupported ? emoji.get('fork_and_knife') : 'fork'
+                        ` (${isUnicodeSupported ? emoji.get('star') : 'star'}:${x.stargazers_count} ${
+                          isUnicodeSupported ? emoji.get('fork_and_knife') : 'fork'
                         }:${x.forks_count})`,
                       description: x.description,
                       value: {
@@ -232,26 +234,27 @@ export async function main() {
           const qrcode = await generateQrcode(webSiteUrl)
           const rows = [
             `\n\n${chalk.bold.greenBright('|')} ${t(Dic.blogWeb.title)}`,
-            `\n${t(Dic.directAccess)}: ${webSiteUrl}`,
+            `\n${t(Dic.directAccess)}: ${chalk.greenBright.underline(webSiteUrl)}`,
             `\n${t(Dic.wechat.scan)}:\n` +
-            boxen(qrcode, {
-              borderStyle: 'round',
-              padding: 1,
-              margin: 1
-            })
+              boxen(qrcode, {
+                borderStyle: 'round',
+                padding: 1,
+                margin: 1
+              })
+            // chalk.greenBright.underline(webSiteUrl)
           ]
           log(rows.join(''))
-          const { value } = await prompts({
-            type: 'toggle',
-            name: 'value',
-            message: `${t(Dic.openWithBrowser)}`,
-            active: 'yes',
-            inactive: 'no',
-            initial: true
-          })
-          if (value) {
-            await require('open')(webSiteUrl)
-          }
+          // const { value } = await prompts({
+          //   type: 'toggle',
+          //   name: 'value',
+          //   message: `${t(Dic.openWithBrowser)}`,
+          //   active: 'yes',
+          //   inactive: 'no',
+          //   initial: true
+          // })
+          // if (value) {
+          //   await require('open')(webSiteUrl)
+          // }
         },
         [options.blogMp]: async () => {
           const qrcode = await generateQrcode('https://mp.weixin.qq.com/a/~QCyvHLpi7gWkTTw_D45LNg~~')
@@ -259,11 +262,11 @@ export async function main() {
             `\n\n${chalk.bold.greenBright('|')} ${t(Dic.blogMp.title)}`,
             `\n${t(Dic.wechat.search)}: ${chalk.bold.greenBright('破冰客')}`,
             `\n${t(Dic.wechat.scan)}:\n` +
-            boxen(qrcode, {
-              borderStyle: 'round',
-              padding: 1,
-              margin: 1
-            })
+              boxen(qrcode, {
+                borderStyle: 'round',
+                padding: 1,
+                margin: 1
+              })
           ]
           log(rows.join(''))
         },
@@ -273,11 +276,11 @@ export async function main() {
             `\n\n${chalk.bold.greenBright('|')} ${t(Dic.cardMp.title)}`,
             `\n${t(Dic.wechat.search)}: ${chalk.bold.greenBright('程序员名片')}`,
             `\n${t(Dic.wechat.scan)}:\n` +
-            boxen(qrcode, {
-              borderStyle: 'round',
-              padding: 1,
-              margin: 1
-            }),
+              boxen(qrcode, {
+                borderStyle: 'round',
+                padding: 1,
+                margin: 1
+              }),
             `\nMy Card Short Link: ` + chalk.bold.greenBright('#小程序://程序员名片/CJpMeOanmyzNyBJ')
           ]
           log(rows.join(''))
@@ -362,7 +365,7 @@ export async function main() {
         //     await playMusicByUrl(song.url)
         //   }
         // }
-      }).reduce<Record<typeof choices[number]['value'], Function>>((acc, [key, fn]) => {
+      }).reduce<Record<(typeof choices)[number]['value'], Function>>((acc, [key, fn]) => {
         acc[key] = () => {
           initial = idxMap[key] ?? 0
           return fn()
