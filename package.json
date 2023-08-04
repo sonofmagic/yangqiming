@@ -1,6 +1,6 @@
 {
   "name": "yangqiming",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "yangqiming",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -50,8 +50,7 @@
     "url": "https://github.com/sonofmagic/yangqiming/issues"
   },
   "homepage": "https://github.com/sonofmagic/yangqiming#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "packageManager": "pnpm@8.6.2",
   "devDependencies": {
     "@icebreakers/eslint-config-ts": "^1.2.2",
