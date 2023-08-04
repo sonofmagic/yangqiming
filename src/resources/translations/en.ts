@@ -78,7 +78,7 @@ export const translation: ITranslation = {
 
   openWithBrowser: 'Open directly in browser?',
   myRepositories: {
-    title: 'My OpenSource Repos',
+    title: 'My Open Source Repos',
     description: 'Fetch data from Github',
     loading: {
       failText: 'Fetching data from Github failed, please retry.',
@@ -108,7 +108,11 @@ export const translation: ITranslation = {
       successMsg: 'Leave a message successfully!'
     }
   },
-  about: 'about'
+  about: 'about',
+  cardMp: {
+    description: 'github card in weapp',
+    title: 'My Github Card'
+  }
 }
 
 export default {

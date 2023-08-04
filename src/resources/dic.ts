@@ -42,6 +42,11 @@ const Dic = {
     description: ''
   },
 
+  cardMp: {
+    title: '',
+    description: ''
+  },
+
   blogWeb: {
     title: '',
     description: ''
