@@ -1,6 +1,6 @@
 import QRCode from 'qrcode'
 import type { QRCodeToStringOptions } from 'qrcode'
-import emoji from 'node-emoji'
+import * as emoji from 'node-emoji'
 import chalk from 'chalk'
 import dayjs from 'dayjs'
 import prompts from 'prompts'

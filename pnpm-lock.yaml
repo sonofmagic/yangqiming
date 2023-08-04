@@ -47,8 +47,8 @@ devDependencies:
     specifier: ^20.4.7
     version: registry.npmmirror.com/@types/node@20.4.7
   '@types/node-emoji':
-    specifier: ^1.8.2
-    version: registry.npmmirror.com/@types/node-emoji@1.8.2
+    specifier: ^2.1.0
+    version: registry.npmmirror.com/@types/node-emoji@2.1.0
   '@types/play-sound':
     specifier: ^1.1.0
     version: registry.npmmirror.com/@types/play-sound@1.1.0
@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^1.1.0
     version: registry.npmmirror.com/@types/sound-play@1.1.0
   axios:
-    specifier: ^0.27.2
-    version: registry.npmmirror.com/axios@0.27.2
+    specifier: ^1.4.0
+    version: registry.npmmirror.com/axios@1.4.0
   boxen:
     specifier: ^5.1.2
     version: registry.npmmirror.com/boxen@5.1.2
@@ -86,8 +86,8 @@ devDependencies:
     specifier: ^6.1.2
     version: registry.npmmirror.com/defu@6.1.2
   del:
-    specifier: ^6.0.0
-    version: registry.npmmirror.com/del@6.0.0
+    specifier: ^7.0.0
+    version: registry.npmmirror.com/del@7.0.0
   enquirer:
     specifier: ^2.4.1
     version: registry.npmmirror.com/enquirer@2.4.1
@@ -104,8 +104,8 @@ devDependencies:
     specifier: ^4.17.21
     version: registry.npmmirror.com/lodash@4.17.21
   node-emoji:
-    specifier: ^1.11.0
-    version: registry.npmmirror.com/node-emoji@1.11.0
+    specifier: ^2.1.0
+    version: registry.npmmirror.com/node-emoji@2.1.0
   oo-ascii-tree:
     specifier: ^1.86.1
     version: registry.npmmirror.com/oo-ascii-tree@1.86.1
@@ -1285,6 +1285,13 @@ packages:
     version: 0.27.8
     dev: true
 
+  registry.npmmirror.com/@sindresorhus/is@3.1.2:
+    resolution: {integrity: sha512-JiX9vxoKMmu8Y3Zr2RVathBL1Cdu4Nt4MuNWemt1Nc06A0RAin9c5FArkhGsyMBWfCu4zj+9b+GxtjAnE4qqLQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@sindresorhus/is/-/is-3.1.2.tgz}
+    name: '@sindresorhus/is'
+    version: 3.1.2
+    engines: {node: '>=10'}
+    dev: true
+
   registry.npmmirror.com/@sinonjs/commons@3.0.0:
     resolution: {integrity: sha512-jXBtWAF4vmdNmZgD5FoKsVLv3rPgDnLgPbU84LIJ3otV44vJlDRokVng5v8NFJdCf/da9legHcKaRuZs4L7faA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@sinonjs/commons/-/commons-3.0.0.tgz}
     name: '@sinonjs/commons'
@@ -1431,10 +1438,13 @@ packages:
     version: 4.14.196
     dev: true
 
-  registry.npmmirror.com/@types/node-emoji@1.8.2:
-    resolution: {integrity: sha512-PfF1qL/9veo8BSHLV84C9ORNr3lHSlnWJ6yU8OdNufoftajeWHTLVbGHvp2B7e7DPDS9gMs6cfeSsqo5rqSitg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node-emoji/-/node-emoji-1.8.2.tgz}
+  registry.npmmirror.com/@types/node-emoji@2.1.0:
+    resolution: {integrity: sha512-LBGWP2LL5A+PpcvzrgXCFcHt9N1l5bqQn05ZUQFFM625k/tmc2w9ghT4kUwQN6gIPlX6qnDOfekmJmV9BywV9g==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node-emoji/-/node-emoji-2.1.0.tgz}
     name: '@types/node-emoji'
-    version: 1.8.2
+    version: 2.1.0
+    deprecated: This is a stub types definition. node-emoji provides its own type definitions, so you do not need this installed.
+    dependencies:
+      node-emoji: registry.npmmirror.com/node-emoji@2.1.0
     dev: true
 
   registry.npmmirror.com/@types/node@20.4.7:
@@ -1788,14 +1798,14 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/aggregate-error@3.1.0:
-    resolution: {integrity: sha512-4I7Td01quW/RpocfNayFdFVk1qSuoh0E7JrbRJ16nH01HhKFQ88INq9Sd+nd72zqRySlr9BmDA8xlEJ6vJMrYA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/aggregate-error/-/aggregate-error-3.1.0.tgz}
+  registry.npmmirror.com/aggregate-error@4.0.1:
+    resolution: {integrity: sha512-0poP0T7el6Vq3rstR8Mn4V/IQrpBLO6POkUSrN7RhyY+GF/InCFShQzsQ39T25gkHhLgSLByyAz+Kjb+c2L98w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/aggregate-error/-/aggregate-error-4.0.1.tgz}
     name: aggregate-error
-    version: 3.1.0
-    engines: {node: '>=8'}
+    version: 4.0.1
+    engines: {node: '>=12'}
     dependencies:
-      clean-stack: registry.npmmirror.com/clean-stack@2.2.0
-      indent-string: registry.npmmirror.com/indent-string@4.0.0
+      clean-stack: registry.npmmirror.com/clean-stack@4.2.0
+      indent-string: registry.npmmirror.com/indent-string@5.0.0
     dev: true
 
   registry.npmmirror.com/ajv@6.12.6:
@@ -1975,13 +1985,14 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  registry.npmmirror.com/axios@0.27.2:
-    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/axios/-/axios-0.27.2.tgz}
+  registry.npmmirror.com/axios@1.4.0:
+    resolution: {integrity: sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/axios/-/axios-1.4.0.tgz}
     name: axios
-    version: 0.27.2
+    version: 1.4.0
     dependencies:
       follow-redirects: registry.npmmirror.com/follow-redirects@1.15.2
       form-data: registry.npmmirror.com/form-data@4.0.0
+      proxy-from-env: registry.npmmirror.com/proxy-from-env@1.1.0
     transitivePeerDependencies:
       - debug
     dev: true
@@ -2378,11 +2389,13 @@ packages:
     version: 1.2.3
     dev: true
 
-  registry.npmmirror.com/clean-stack@2.2.0:
-    resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/clean-stack/-/clean-stack-2.2.0.tgz}
+  registry.npmmirror.com/clean-stack@4.2.0:
+    resolution: {integrity: sha512-LYv6XPxoyODi36Dp976riBtSY27VmFo+MKqEU9QCCWyTrdEPDog+RWA7xQWHi6Vbp61j5c4cdzzX1NidnwtUWg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/clean-stack/-/clean-stack-4.2.0.tgz}
     name: clean-stack
-    version: 2.2.0
-    engines: {node: '>=6'}
+    version: 4.2.0
+    engines: {node: '>=12'}
+    dependencies:
+      escape-string-regexp: registry.npmmirror.com/escape-string-regexp@5.0.0
     dev: true
 
   registry.npmmirror.com/cli-boxes@2.2.1:
@@ -2673,20 +2686,20 @@ packages:
     version: 6.1.2
     dev: true
 
-  registry.npmmirror.com/del@6.0.0:
-    resolution: {integrity: sha512-1shh9DQ23L16oXSZKB2JxpL7iMy2E0S9d517ptA1P8iw0alkPtQcrKH7ru31rYtKwF499HkTu+DRzq3TCKDFRQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/del/-/del-6.0.0.tgz}
+  registry.npmmirror.com/del@7.0.0:
+    resolution: {integrity: sha512-tQbV/4u5WVB8HMJr08pgw0b6nG4RGt/tj+7Numvq+zqcvUFeMaIWWOUFltiU+6go8BSO2/ogsB4EasDaj0y68Q==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/del/-/del-7.0.0.tgz}
     name: del
-    version: 6.0.0
-    engines: {node: '>=10'}
+    version: 7.0.0
+    engines: {node: '>=14.16'}
     dependencies:
-      globby: registry.npmmirror.com/globby@11.1.0
-      graceful-fs: registry.npmmirror.com/graceful-fs@4.2.10
+      globby: registry.npmmirror.com/globby@13.2.2
+      graceful-fs: registry.npmmirror.com/graceful-fs@4.2.11
       is-glob: registry.npmmirror.com/is-glob@4.0.3
-      is-path-cwd: registry.npmmirror.com/is-path-cwd@2.2.0
-      is-path-inside: registry.npmmirror.com/is-path-inside@3.0.3
-      p-map: registry.npmmirror.com/p-map@4.0.0
+      is-path-cwd: registry.npmmirror.com/is-path-cwd@3.0.0
+      is-path-inside: registry.npmmirror.com/is-path-inside@4.0.0
+      p-map: registry.npmmirror.com/p-map@5.5.0
       rimraf: registry.npmmirror.com/rimraf@3.0.2
-      slash: registry.npmmirror.com/slash@3.0.0
+      slash: registry.npmmirror.com/slash@4.0.0
     dev: true
 
   registry.npmmirror.com/delayed-stream@1.0.0:
@@ -2780,6 +2793,12 @@ packages:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/emoji-regex/-/emoji-regex-8.0.0.tgz}
     name: emoji-regex
     version: 8.0.0
+    dev: true
+
+  registry.npmmirror.com/emojilib@2.4.0:
+    resolution: {integrity: sha512-5U0rVMU5Y2n2+ykNLQqMoqklN9ICBT/KsvC1Gz6vqHbz2AXXGkG+Pm5rMWk/8Vjrr/mY9985Hi8DYzn1F09Nyw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/emojilib/-/emojilib-2.4.0.tgz}
+    name: emojilib
+    version: 2.4.0
     dev: true
 
   registry.npmmirror.com/encode-utf8@1.0.3:
@@ -2917,6 +2936,13 @@ packages:
     name: escape-string-regexp
     version: 4.0.0
     engines: {node: '>=10'}
+    dev: true
+
+  registry.npmmirror.com/escape-string-regexp@5.0.0:
+    resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz}
+    name: escape-string-regexp
+    version: 5.0.0
+    engines: {node: '>=12'}
     dev: true
 
   registry.npmmirror.com/eslint-config-prettier@8.10.0(eslint@8.46.0):
@@ -3700,10 +3726,23 @@ packages:
     dependencies:
       array-union: registry.npmmirror.com/array-union@2.1.0
       dir-glob: registry.npmmirror.com/dir-glob@3.0.1
-      fast-glob: registry.npmmirror.com/fast-glob@3.2.12
-      ignore: registry.npmmirror.com/ignore@5.2.0
+      fast-glob: registry.npmmirror.com/fast-glob@3.3.1
+      ignore: registry.npmmirror.com/ignore@5.2.4
       merge2: registry.npmmirror.com/merge2@1.4.1
       slash: registry.npmmirror.com/slash@3.0.0
+    dev: true
+
+  registry.npmmirror.com/globby@13.2.2:
+    resolution: {integrity: sha512-Y1zNGV+pzQdh7H39l9zgB4PJqjRNqydvdYCDG4HFXM4XuvSaQQlEc91IU1yALL8gUTDomgBAfz3XJdmUS+oo0w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/globby/-/globby-13.2.2.tgz}
+    name: globby
+    version: 13.2.2
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      dir-glob: registry.npmmirror.com/dir-glob@3.0.1
+      fast-glob: registry.npmmirror.com/fast-glob@3.3.1
+      ignore: registry.npmmirror.com/ignore@5.2.4
+      merge2: registry.npmmirror.com/merge2@1.4.1
+      slash: registry.npmmirror.com/slash@4.0.0
     dev: true
 
   registry.npmmirror.com/gopd@1.0.1:
@@ -3712,12 +3751,6 @@ packages:
     version: 1.0.1
     dependencies:
       get-intrinsic: registry.npmmirror.com/get-intrinsic@1.2.1
-    dev: true
-
-  registry.npmmirror.com/graceful-fs@4.2.10:
-    resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/graceful-fs/-/graceful-fs-4.2.10.tgz}
-    name: graceful-fs
-    version: 4.2.10
     dev: true
 
   registry.npmmirror.com/graceful-fs@4.2.11:
@@ -3845,13 +3878,6 @@ packages:
     version: 1.2.1
     dev: true
 
-  registry.npmmirror.com/ignore@5.2.0:
-    resolution: {integrity: sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ignore/-/ignore-5.2.0.tgz}
-    name: ignore
-    version: 5.2.0
-    engines: {node: '>= 4'}
-    dev: true
-
   registry.npmmirror.com/ignore@5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ignore/-/ignore-5.2.4.tgz}
     name: ignore
@@ -3887,11 +3913,11 @@ packages:
     engines: {node: '>=0.8.19'}
     dev: true
 
-  registry.npmmirror.com/indent-string@4.0.0:
-    resolution: {integrity: sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/indent-string/-/indent-string-4.0.0.tgz}
+  registry.npmmirror.com/indent-string@5.0.0:
+    resolution: {integrity: sha512-m6FAo/spmsW2Ab2fU35JTYwtOKa2yAwXSwgjSv1TJzh4Mh7mC3lzAOVLBprb72XsTrgkEIsl7YrFNAiDiRhIGg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/indent-string/-/indent-string-5.0.0.tgz}
     name: indent-string
-    version: 4.0.0
-    engines: {node: '>=8'}
+    version: 5.0.0
+    engines: {node: '>=12'}
     dev: true
 
   registry.npmmirror.com/inflight@1.0.6:
@@ -4094,11 +4120,11 @@ packages:
     engines: {node: '>=0.12.0'}
     dev: true
 
-  registry.npmmirror.com/is-path-cwd@2.2.0:
-    resolution: {integrity: sha512-w942bTcih8fdJPJmQHFzkS76NEP8Kzzvmw92cXsazb8intwLqPibPPdXf4ANdKV3rYMuuQYGIWtvz9JilB3NFQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-path-cwd/-/is-path-cwd-2.2.0.tgz}
+  registry.npmmirror.com/is-path-cwd@3.0.0:
+    resolution: {integrity: sha512-kyiNFFLU0Ampr6SDZitD/DwUo4Zs1nSdnygUBqsu3LooL00Qvb5j+UnvApUn/TTj1J3OuE6BTdQ5rudKmU2ZaA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-path-cwd/-/is-path-cwd-3.0.0.tgz}
     name: is-path-cwd
-    version: 2.2.0
-    engines: {node: '>=6'}
+    version: 3.0.0
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
 
   registry.npmmirror.com/is-path-inside@3.0.3:
@@ -4106,6 +4132,13 @@ packages:
     name: is-path-inside
     version: 3.0.3
     engines: {node: '>=8'}
+    dev: true
+
+  registry.npmmirror.com/is-path-inside@4.0.0:
+    resolution: {integrity: sha512-lJJV/5dYS+RcL8uQdBDW9c9uWFLLBNRyFhnAKXw5tVqLlKZ4RMGZKv+YQ/IA3OhD+RpbJa1LLFM1FQPGyIXvOA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-path-inside/-/is-path-inside-4.0.0.tgz}
+    name: is-path-inside
+    version: 4.0.0
+    engines: {node: '>=12'}
     dev: true
 
   registry.npmmirror.com/is-reference@1.2.1:
@@ -5120,12 +5153,15 @@ packages:
     version: 1.4.0
     dev: true
 
-  registry.npmmirror.com/node-emoji@1.11.0:
-    resolution: {integrity: sha512-wo2DpQkQp7Sjm2A0cq+sN7EHKO6Sl0ctXeBdFZrL9T9+UywORbufTcTZxom8YqpLQt/FqNMUkOpkZrJVYSKD3A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/node-emoji/-/node-emoji-1.11.0.tgz}
+  registry.npmmirror.com/node-emoji@2.1.0:
+    resolution: {integrity: sha512-tcsBm9C6FmPN5Wo7OjFi9lgMyJjvkAeirmjR/ax8Ttfqy4N8PoFic26uqFTIgayHPNI5FH4ltUvfh9kHzwcK9A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/node-emoji/-/node-emoji-2.1.0.tgz}
     name: node-emoji
-    version: 1.11.0
+    version: 2.1.0
     dependencies:
-      lodash: registry.npmmirror.com/lodash@4.17.21
+      '@sindresorhus/is': registry.npmmirror.com/@sindresorhus/is@3.1.2
+      char-regex: registry.npmmirror.com/char-regex@1.0.2
+      emojilib: registry.npmmirror.com/emojilib@2.4.0
+      skin-tone: registry.npmmirror.com/skin-tone@2.0.0
     dev: true
 
   registry.npmmirror.com/node-fetch-native@1.2.0:
@@ -5360,13 +5396,13 @@ packages:
       p-limit: registry.npmmirror.com/p-limit@3.1.0
     dev: true
 
-  registry.npmmirror.com/p-map@4.0.0:
-    resolution: {integrity: sha512-/bjOqmgETBYB5BoEeGVea8dmvHb2m9GLy1E9W43yeyfP6QQCZGFNa+XRceJEuDB6zqr+gKpIAmlLebMpykw/MQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/p-map/-/p-map-4.0.0.tgz}
+  registry.npmmirror.com/p-map@5.5.0:
+    resolution: {integrity: sha512-VFqfGDHlx87K66yZrNdI4YGtD70IRyd+zSvgks6mzHPRNkoKy+9EKP4SFC77/vTTQYmRmti7dvqC+m5jBrBAcg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/p-map/-/p-map-5.5.0.tgz}
     name: p-map
-    version: 4.0.0
-    engines: {node: '>=10'}
+    version: 5.5.0
+    engines: {node: '>=12'}
     dependencies:
-      aggregate-error: registry.npmmirror.com/aggregate-error@3.1.0
+      aggregate-error: registry.npmmirror.com/aggregate-error@4.0.1
     dev: true
 
   registry.npmmirror.com/p-try@2.2.0:
@@ -5547,6 +5583,12 @@ packages:
     dependencies:
       kleur: registry.npmmirror.com/kleur@3.0.3
       sisteransi: registry.npmmirror.com/sisteransi@1.0.5
+    dev: true
+
+  registry.npmmirror.com/proxy-from-env@1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz}
+    name: proxy-from-env
+    version: 1.1.0
     dev: true
 
   registry.npmmirror.com/pump@3.0.0:
@@ -5883,6 +5925,15 @@ packages:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sisteransi/-/sisteransi-1.0.5.tgz}
     name: sisteransi
     version: 1.0.5
+    dev: true
+
+  registry.npmmirror.com/skin-tone@2.0.0:
+    resolution: {integrity: sha512-kUMbT1oBJCpgrnKoSr0o6wPtvRWT9W9UKvGLwfJYO2WuahZRHOpEyL1ckyMGgMWh0UdpmaoFqKKD29WTomNEGA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/skin-tone/-/skin-tone-2.0.0.tgz}
+    name: skin-tone
+    version: 2.0.0
+    engines: {node: '>=8'}
+    dependencies:
+      unicode-emoji-modifier-base: registry.npmmirror.com/unicode-emoji-modifier-base@1.0.0
     dev: true
 
   registry.npmmirror.com/slash@3.0.0:
@@ -6421,6 +6472,13 @@ packages:
       has-bigints: registry.npmmirror.com/has-bigints@1.0.2
       has-symbols: registry.npmmirror.com/has-symbols@1.0.3
       which-boxed-primitive: registry.npmmirror.com/which-boxed-primitive@1.0.2
+    dev: true
+
+  registry.npmmirror.com/unicode-emoji-modifier-base@1.0.0:
+    resolution: {integrity: sha512-yLSH4py7oFH3oG/9K+XWrz1pSi3dfUrWEnInbxMfArOfc1+33BlGPQtLsOYwvdMy11AwUBetYuaRxSPqgkq+8g==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unicode-emoji-modifier-base/-/unicode-emoji-modifier-base-1.0.0.tgz}
+    name: unicode-emoji-modifier-base
+    version: 1.0.0
+    engines: {node: '>=4'}
     dev: true
 
   registry.npmmirror.com/untildify@4.0.0:
